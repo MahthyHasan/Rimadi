@@ -1,0 +1,38 @@
+/* Top Navbar Styles Start */
+.navbar {
+	background-color: transparent;
+	padding: 10px;
+}
+
+.navList {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.navItem {
+	margin-right: 20px;
+}
+
+.navLink {
+	color: #032d30;
+	text-decoration: none;
+	font-family: Roboto;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%; /* 16px */
+	letter-spacing: 0.5px;
+    padding-bottom: 5px;
+}
+
+.navLink:hover {
+	border-bottom: 3px solid #032d30;
+    transform: scale(1.01);
+    transition: 0.1s;
+}
+
+.navlink-active{
+    border-bottom: 3px solid #032d30;
+}
