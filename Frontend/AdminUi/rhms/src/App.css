@@ -3,7 +3,7 @@
 }
 
 .border-bottom-d1d1d1 {
-  border-bottom: 1px solid #d1d1d1 !important;
+  border-bottom: 3px solid #032D30 !important;
 }
 
 .bg-f3f3f3 {
@@ -66,16 +66,43 @@ p {
 
   /*background-color: #EBF8F2;*/
 }
+.sid-tab-menu-icons:hover{
+  color: #D8AD5D !important;
+}
 .side-bg-color {
   background-color: #f6f6f6;
   width: 17.56294rem;
   border-bottom: 5px solid #D8AD5D;
 }
 .accounts-container{
-  background-color: #1da51c;
-  width: 100%;
-  height: 40px;
+  border-top: 5px solid #D8AD5D;
+  margin-top: 6.6px;
+  
 }
+.accounts-Heading-text{
+
+  color: #787486;
+font-family: Inter;
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+margin-left: 40px;
+margin-top: 40px;
+}
+.accounts-Heading-text-div{
+  display: flex;
+  flex-direction: start;
+}
+.plus-icon-div-accounts{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.plus-icon-accounts{
+  margin-top: 38px;
+  margin-right: 40px;
+  }
 
 .mt-2px {
   margin-top: 2px !important;
@@ -1367,4 +1394,21 @@ channelling-card2 {
   .log-out-button-in-side-navbar {
     margin-top: 80%;
   }
+}
+.Resturent-title{
+  color: #0D062D;
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.date-time-in-nav-bar{
+  color: #0D062D;
+text-align: right;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
