@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
-// import Profile from "../../../../assets/profile-img.svg";
-// import SideClose from "../../../../assets/icons/left-arrow.svg";
 import FeatherIcon from "feather-icons-react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeToggle } from "../redux/actions";
-// import { EditProfile } from "./EditProfile";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useNavigate } from "react-router-dom";
-// import logopath from "../../../../assets/logo.png";
-// import clinicicon from "../../../../assets/icons2/clinic-svgrepo-com.svg";
-// import Drugs from "../../../../assets/icons2/drugs-pill-svgrepo-com.svg";
-// import History from "../../../../assets/icons2/clinic-history-svgrepo-com.svg";
-// import chat from "../../../../assets/icons2/office-discussion-chat-communication-goup-2-svgrepo-com.svg"
+import logoPath from "../assets/Layout/logo.png";
+import DashboardIcon from "../assets/Layout/dasbordIcon.svg";
+import ManageRoomIcon from "../assets/Layout/roomIcon.svg";
+import ManageBookingIcon from "../assets/Layout/bookingIcon.svg";
+import MangeEmployeeIcon from "../assets/Layout/employeeIcon.svg";
+import ReportIcon from "../assets/Layout/reportIcon.svg";
+import PromotionIcon from "../assets/Layout/promotionIcon.svg";
+import NotificationIcon from "../assets/Layout/notificationIcon.svg";
+import SettingIcon from "../assets/Layout/settingIcon.svg"
 
 function Layout({ children }) {
     const dispatch = useDispatch();
@@ -41,32 +42,19 @@ function Layout({ children }) {
       <div className="row flex-nowrap">
         <div
           className={
-            (!open ? " col-xl-2" : " w-100px") +
+            (!open ? " col-xl-3" : " w-100px") +
             (!show ? " mobile-navbar-hide " : " mobile-show ") +
             " col-auto col-md-1 px-0 side-bg-color border-right min-vh-100 trans"
           }
         >
-          <div className="row">
-            <div className="col">
-              {/* <img
-                src={logopath}
-                className={open ? "hide-logo" : "logo-prm"}
-                style={{ height: "45px", width: "auto" }}
-              /> */}
-            </div>
-            <div className="col">
-              <div
-                className={"close-btn-container mobile-hide"}
-                onClick={toggleDrawer}
-              >
-                {/* <img
-                  src={SideClose}
-                  alt="SideClose"
-                  className={!!open && "rotate-180"}
-                /> */}
-              </div>
-            </div>
-          </div>
+          
+            <div className="Logo-Container">
+               <img
+                src={logoPath}
+                className={open ? "hide-logo" : "logo-rimadi"}                    
+              /> 
+            </div>            
+          
 
           <div className="d-flex flex-column align-items-center align-items-sm-start px-2 pt-2 nav-link-text-color pt-4">
             <div className={"w-100 px-sm-2"}>
@@ -79,14 +67,14 @@ function Layout({ children }) {
                 to={"/doctorDashboard"}
               >
                 <div className={"d-flex"}>
-                  {/* <img
-                    src={clinicicon}
+                  <img
+                    src={DashboardIcon}
                     alt="avatar"
                     height="24px"
                     width="26.4px"
                     className=" me-2"
-                  /> */}
-                  {!open && <div className={"trans-1"}>clinic</div>}
+                  /> 
+                  {!open && <div className={"trans-1"}>Dashboard</div>}
                 </div>
               </NavLink>
             </div>
@@ -101,14 +89,14 @@ function Layout({ children }) {
                 to={"/DrugsDoctorPage"}
               >
                 <div className={"d-flex"}>
-                  {/* <img
-                    src={Drugs}
+                   <img
+                    src={ManageRoomIcon}
                     alt="avatar"
                     height="24px"
                     width="26.4px"
                     className=" me-2"
-                  /> */}
-                  {!open && <div className={""}>Drugs</div>}
+                  /> 
+                  {!open && <div className={""}>Manage Rooms</div>}
                 </div>
               </NavLink>
             </div>
@@ -122,14 +110,14 @@ function Layout({ children }) {
                 to={"/Analysis"}
               >
                 <div className={"d-flex"}>
-                  {/* <img
-                    src={History}
+                   <img
+                    src={ManageBookingIcon}
                     alt="avatar"
                     height="24px"
                     width="26.4px"
                     className=" me-2"
-                  /> */}
-                  {!open && <div className={""}>Analysis</div>}
+                  />
+                  {!open && <div className={""}>Manage Booking</div>}
                 </div>
               </NavLink>
             </div>
@@ -143,39 +131,104 @@ function Layout({ children }) {
                 to={"/Chat"}
               >
                 <div className={"d-flex"}>
-                  {/* <img
-                    src={chat}
+                   <img
+                    src={MangeEmployeeIcon}
                     alt="avatar"
                     height="24px"
                     width="26.4px"
                     className=" me-2"
-                  /> */}
-                  {!open && <div className={""}>Community Chat</div>}
+                  /> 
+                  {!open && <div className={""}>Manage Employee</div>}
                 </div>
               </NavLink>
             </div>
-
             <div className={"w-100 px-sm-2"}>
-             
-            </div>
-            <div className={"w-100 px-sm-2 log-out-button-in-side-navbar"}>
               <NavLink
                 className={({ isActive }) =>
                   isActive
                     ? "side-menu-item side-menu-active"
                     : "side-menu-item"
                 }
-                to={"/settings"}
+                to={"/Chat"}
               >
                 <div className={"d-flex"}>
-                  <FeatherIcon
-                    icon="log-out"
-                    className={!open ? "me-2" : "ms-1"}
-                  />
-                  {!open && <div className={""}>log-out</div>}
+                   <img
+                    src={ReportIcon}
+                    alt="avatar"
+                    height="24px"
+                    width="26.4px"
+                    className=" me-2"
+                  /> 
+                  {!open && <div className={""}>Report</div>}
                 </div>
               </NavLink>
             </div>
+            <div className={"w-100 px-sm-2"}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "side-menu-item side-menu-active"
+                    : "side-menu-item"
+                }
+                to={"/Chat"}
+              >
+                <div className={"d-flex"}>
+                   <img
+                    src={PromotionIcon}
+                    alt="avatar"
+                    height="24px"
+                    width="26.4px"
+                    className=" me-2"
+                  />
+                  {!open && <div className={""}>Promotion</div>}
+                </div>
+              </NavLink>
+            </div>
+            <div className={"w-100 px-sm-2"}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "side-menu-item side-menu-active"
+                    : "side-menu-item"
+                }
+                to={"/Chat"}
+              >
+                <div className={"d-flex"}>
+                   <img
+                    src={NotificationIcon}
+                    alt="avatar"
+                    height="24px"
+                    width="26.4px"
+                    className=" me-2"
+                  />
+                  {!open && <div className={""}>Notification</div>}
+                </div>
+              </NavLink>
+            </div>
+            <div className={"w-100 px-sm-2"}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "side-menu-item side-menu-active"
+                    : "side-menu-item"
+                }
+                to={"/Chat"}
+              >
+                <div className={"d-flex"}>
+                   <img
+                    src={SettingIcon}
+                    alt="avatar"
+                    height="24px"
+                    width="26.4px"
+                    className=" me-2"
+                  />
+                  {!open && <div className={""}>Setting</div>}
+                </div>
+              </NavLink>
+            </div>
+          </div>
+          <div className="accounts-container">
+
           </div>
         </div>
         <div className="col p-0">
@@ -198,13 +251,13 @@ function Layout({ children }) {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        {/* <img
-                          src={Profile}
+                         <img
+                          src={SettingIcon}
                           alt="avatar"
                           height="38px"
                           width="38px"
                           className="rounded-circle me-2"
-                        /> */}
+                        /> 
                         <p className="mb-0 text-dark">{user?.username}</p>
                       </div>
                     </Dropdown.Toggle>
