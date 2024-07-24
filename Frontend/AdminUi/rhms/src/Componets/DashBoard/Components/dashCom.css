@@ -36,3 +36,79 @@
 .navlink-active{
     border-bottom: 3px solid #032d30;
 }
+
+/* Custom Date Picker */
+
+.date-picker-container {
+	display: flex;
+	align-items: center;
+  }
+  
+  .calendar-icon {
+	margin-left: 10px;
+	cursor: pointer;
+  }
+  
+  .custom-input {
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: inline-block;
+	width: 150px;
+  }
+  
+  .custom-input:focus {
+	outline: none;
+	border-color: #d47120;
+  }
+
+  /* React Date picker */
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range{
+    border-radius: 0.3rem !important;
+    background-color: #032D30 !important;
+    color: #D8AD5D !important;
+}
+
+.react-datepicker__header {
+    text-align: center;
+	background-color: #032D30 !important;
+    color: #D8AD5D !important;
+    border-bottom: 1px solid #aeaeae;
+    border-top-left-radius: 0.3rem;
+    padding: 8px 0;
+    position: relative;
+}
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+    margin-top: 0;
+    color: #D8AD5D !important;
+    font-weight: bold;
+    font-size: 0.944rem;
+}
+.react-datepicker__day-name {
+    color: #D8AD5D !important;
+    display: inline-block;
+    width: 1.7rem;
+    line-height: 1.7rem;
+    text-align: center;
+    margin: 0.166rem;
+}
+
+/* Top Info Cards Styles */
+.top-card-body{
+  display: flex;
+padding: 16px;
+flex-direction: column;
+align-items: center;
+gap: 16px;
+flex: 1 0 0;
+border: 1px solid #DDE1E6;
+background-color: #FFFF;
+}
+.top-card-title{
+color:  #697077;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 22.4px */
+}
