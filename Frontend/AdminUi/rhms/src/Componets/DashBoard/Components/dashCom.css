@@ -302,3 +302,48 @@ line-height: normal;
 margin-right: 24px; 
 
 }
+
+.profile-small-card-search-results{
+  width: 200px;
+  height: 37px;
+  background-color: transparent;
+  border: 0.5px solid #D8AD5D;
+  display: flex !important;
+  margin-top: 2px;
+}
+.small-card-profile-picture{
+  border-radius: 50% !important;
+  width: 30px;
+  height: 30px;
+  margin-top: 3px;
+  margin-left: 18px;
+
+}
+.small-card-profile-name{
+  color: #333;
+font-family: Rubik;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.3px;
+margin-top:6px;
+margin-left: 27px;
+}
+
+.client-action-button{
+  width: 200px;
+  height: 37px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #032D30;
+  color: #FFF;
+  font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: -66px;
+  margin-top: 25px;
+
+}
