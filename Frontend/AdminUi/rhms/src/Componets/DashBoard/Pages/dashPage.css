@@ -22,3 +22,29 @@ margin-top: 21px;
 margin-left: 6px;
 margin-right: 6px;
 }
+
+.top-card-body{
+
+}
+
+/* Booking Request div */
+.booking-requests-div{
+width: 400px;
+height: 629px;
+border-radius: 8px;
+border: 2px solid #D8AD5D;
+overflow-y: scroll;
+overflow-x: hidden;
+padding: 10px;
+margin-left: -30px !important;
+}
+
+/* Client Action Div */
+.client-action-div{
+width: 290px !important;
+height: 430px;
+border-radius: 8px;
+border: 2px solid #D8AD5D;
+padding: 10px;
+margin-left: 47px;
+}

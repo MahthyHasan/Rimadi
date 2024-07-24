@@ -95,14 +95,21 @@
 
 /* Top Info Cards Styles */
 .top-card-body{
+  width: 247px;
+  height: 80px;
   display: flex;
-padding: 16px;
+padding: 5px;
 flex-direction: column;
 align-items: center;
-gap: 16px;
+gap: 0px;
 flex: 1 0 0;
 border: 1px solid #DDE1E6;
 background-color: #FFFF;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+flex: 1 0 0;
+margin-top: 5px;
 }
 .top-card-title{
 color:  #697077;
@@ -111,4 +118,187 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 140%; /* 22.4px */
+}
+.card-data-text{
+  color: #21272A;
+  width: 100%;
+
+/* Heading/4 */
+font-family: Roboto;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 110%; /* 26.4px */
+}
+.card-data-percentage{
+  color:  #21272A;
+text-align: center;
+
+/* Body/S */
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+margin-left: 3.7rem;
+margin-top: 10px;
+}
+
+
+/* Chart Styles */
+.chart-container-div{
+  margin-left: 10px;
+  margin-top: 43px;
+  width: 308px !important;
+  height: 311px !important;
+  border: 2px solid #D8AD5D;
+  border-radius: 10px;
+  padding: 5%;
+  padding-left: 8% !important; 
+  padding-right: 8% !important;
+
+}
+.chart-title-text{
+  color: var(--CoolGray-90, #21272A);
+
+/* Heading/6 */
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 110%; /* 19.8px */
+}
+.piechart-first-on-dashboard{
+  height: 220px !important ;
+  width: 234.32px !important;
+}
+
+/* Booking Request Card Body */
+
+.booking-request-card-body{
+width: 360px;
+height: 170px;
+flex-shrink: 0;
+border-radius: 8px;
+background: #FFF;
+box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.15);
+margin-top: 7px;
+}
+.card-request-client-profile{
+  width: 112.048px !important;
+height: 69px;
+flex-shrink: 0;
+border-radius: 4px;
+margin-left: 24px;
+margin-top: 18px !important;
+}
+.whishList-icon-booking-request-card{
+  width: 23.14px;
+height: 17px;
+margin-top: 23px !important;
+margin-right: 21px;
+}
+.card-request-booking-client-name{
+  color: #333;
+font-family: Rubik;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.3px;
+width: 126.663px;
+margin-top: 22px;
+margin-left: 17px;
+
+}
+.card-request-booking-client-country-name{
+  width: 127.881px;
+  color: #0EBE7F;
+font-family: Rubik;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.3px;
+margin-top: -18px !important;
+margin-left: 17px;
+}
+.card-request-booking-duration{
+  width: 118.137px;
+  color: #677294;
+font-family: Rubik;
+font-size: 12px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: -0.3px;
+margin-top: -18px !important;
+margin-left: 17px;
+}
+
+.card-request-booking-list-item-percentage{
+  color: #677294;
+font-family: Rubik;
+font-size: 11px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: -0.3px;
+}
+.card-request-booking-list-item-previous-records{
+  color: #677294;
+  font-family: Rubik;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.3px;  
+}
+.list-item-total{
+  color: #0EBE7F !important;
+  margin-left: 22px;
+  margin-top: -18px !important;
+}
+.booking-request-small-list-first{
+  margin-left: 12px;
+}
+.booking-request-small-list-second{
+  margin-left: 2rem;
+}
+.booking-request-room-availability{
+  color: #0EBE7F;
+font-family: Rubik;
+font-size: 13px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.3px;
+margin-left: 23px;
+margin-top: 5px !important;
+}
+.booking-request-room-no{
+  color: #677294;
+font-family: Rubik;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.3px;
+margin-left: 23px;
+margin-top: -15px !important;
+}
+.action-button-booking-request{
+  width: 136.406px;
+height: 34px;
+flex-shrink: 0;
+border-radius: 4px;
+background: #032D30;
+color: #FFF;
+font-family: Rubik;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-right: 24px; 
+
 }
