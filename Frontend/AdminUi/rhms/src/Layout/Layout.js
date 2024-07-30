@@ -29,6 +29,7 @@ function Layout({ children }) {
 	function toggleDrawer() {
 		dispatch(changeToggle(!open));
 	}
+	const [activeLink, setActiveLink] = useState(null);
 
 	const [profilePopupShow, setProfilePopupShow] = useState(false);
 
@@ -63,7 +64,7 @@ function Layout({ children }) {
 											? "side-menu-item side-menu-active "
 											: "side-menu-item "
 									}
-									to={"/dashboard-overview"}>
+									to={"/dashboard"}>
 									<div className={"d-flex"}>
 										<img
 											src={DashboardIcon}

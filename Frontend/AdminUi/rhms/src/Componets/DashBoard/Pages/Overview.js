@@ -15,8 +15,8 @@ import PcSmall from "../Components/PcSmall";
 Chart.register(ArcElement);
 
 const tabs = [
-	{ label: "Overview", link: "/dashboard-overview" },
-	{ label: "Expenses", link: "/dashboard-expenses" },
+	{ label: "Overview", link: "/dashboard/overview" },
+	{ label: "Expenses", link: "/dashboard/expenses" },
 	{ label: "Bill", link: "/dashboard-bill" },
 	{ label: "Smart Key", link: "/dashboard-smartKey" },
 ];
