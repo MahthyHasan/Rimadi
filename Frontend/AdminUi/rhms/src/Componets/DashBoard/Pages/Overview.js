@@ -163,29 +163,39 @@ function Overview() {
 								<div className="row justify-content-center">
 									<div className="col-6 col-md-4">
 										<div className="search-profile-div-profile-action">
-                      <PcSmall
-                      name="Mahthy"
-                      />
-                      <PcSmall
-                      name="Mahthy"
-                      />
-                      <PcSmall
-                      name="Mahthy"
-                      />
-                      <PcSmall
-                      name="Mahthy"
-                      />
-                    </div>
+											<PcSmall name="Mahthy" />
+											<PcSmall name="Mahthy" />
+											<PcSmall name="Mahthy" />
+											<PcSmall name="Mahthy" />
+										</div>
 									</div>
 								</div>
-                <div className="row justify-content-center">
+								<div className="row justify-content-center">
 									<div className="col-6 col-md-4">
-                  <button className='client-action-button'>Action</button>
+										<button className="client-action-button">Action</button>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="row"></div>
+						<div className="row">
+							<div className="counter-availability">
+								<div className="row">
+									<p className="client-action-heading">Counter Availability</p>
+								</div>
+								<div className="row justify-content-center">
+									<div className="col-6 col-md-4">
+										<button className="client-action-button">Available</button>
+									</div>
+								</div>
+								<div className="row justify-content-center  mt-4">
+									<div className="col-6 col-md-4">
+										<button className="client-action-button-red">
+											Not Available
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

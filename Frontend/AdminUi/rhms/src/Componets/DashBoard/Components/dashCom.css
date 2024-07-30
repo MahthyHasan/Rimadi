@@ -347,3 +347,19 @@ margin-left: 27px;
   margin-top: 25px;
 
 }
+.client-action-button-red{
+  width: 200px;
+  height: 37px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #6F0606;
+  color: #FFF;
+  font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: -66px;
+  margin-top: 25px;
+
+}

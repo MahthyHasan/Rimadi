@@ -103,3 +103,12 @@
 	overflow-x: hidden;
     margin-top: 20px !important;
 }
+.counter-availability{
+	width: 290px !important;
+	height: 276px;
+	margin-top: 3px !important;
+	border-radius: 8px;
+	border: 2px solid #d8ad5d;
+	padding: 19px;
+	margin-left: 47px;
+}
