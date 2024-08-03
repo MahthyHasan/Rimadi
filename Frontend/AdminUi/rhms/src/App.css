@@ -1,3 +1,7 @@
+body{
+  overflow-x: hidden; /* Hide the vertical scrollbar */
+  width: 100%;
+}
 .border-right {
   border-right: 3px solid #032D30 !important;
 }

@@ -68,7 +68,7 @@
 	font-weight: 400;
 	line-height: 165.6%; /* 23.184px */
 	letter-spacing: -0.3px;
-    margin-top: -20px !important;
+	margin-top: -20px !important;
 }
 .client-action-input-text-field {
 	width: 230px;
@@ -78,7 +78,7 @@
 	background: #fff;
 	margin-left: -5rem;
 	text-align: center;
-    margin-top: -10px !important;
+	margin-top: -10px !important;
 }
 
 .client-action-input-text-field::placeholder {
@@ -101,9 +101,9 @@
 	padding: 5px;
 	overflow-y: scroll;
 	overflow-x: hidden;
-    margin-top: 20px !important;
+	margin-top: 20px !important;
 }
-.counter-availability{
+.counter-availability {
 	width: 290px !important;
 	height: 276px;
 	margin-top: 3px !important;
@@ -112,6 +112,25 @@
 	padding: 19px;
 	margin-left: 47px;
 }
-.dashboard-expense-page-chart{
+.dashboard-expense-page-chart {
 	width: 100%;
+}
+.table-container-for-expenses-records {
+	width: 645px;
+	height: 478px;
+	border-radius: 8px;
+	border: 2px solid #d8ad5d !important;
+}
+.table-row-containing-sector {
+	padding: 5px !important;
+}
+.Filter-button-on-expense-table {
+	width: 88px;
+	height: 40px;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	border-radius: 6px;
+	border: 1px solid #21272a;
+	background: #fff;
 }
