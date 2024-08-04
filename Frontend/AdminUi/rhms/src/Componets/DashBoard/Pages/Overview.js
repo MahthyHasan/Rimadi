@@ -17,8 +17,8 @@ Chart.register(ArcElement);
 const tabs = [
 	{ label: "Overview", link: "/dashboard/overview" },
 	{ label: "Expenses", link: "/dashboard/expenses" },
-	{ label: "Bill", link: "/dashboard-bill" },
-	{ label: "Smart Key", link: "/dashboard-smartKey" },
+	{ label: "Bill", link: "/dashboard/bill" },
+	{ label: "Smart Key", link: "/dashboard/smartKey" },
 ];
 
 const data = {

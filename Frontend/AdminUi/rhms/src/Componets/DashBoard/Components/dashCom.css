@@ -24,17 +24,17 @@
 	font-weight: 500;
 	line-height: 100%; /* 16px */
 	letter-spacing: 0.5px;
-    padding-bottom: 5px;
+	padding-bottom: 5px;
 }
 
 .navLink:hover {
 	border-bottom: 3px solid #032d30;
-    transform: scale(1.01);
-    transition: 0.1s;
+	transform: scale(1.01);
+	transition: 0.1s;
 }
 
-.navlink-active{
-    border-bottom: 3px solid #032d30;
+.navlink-active {
+	border-bottom: 3px solid #032d30;
 }
 
 /* Custom Date Picker */
@@ -42,324 +42,378 @@
 .date-picker-container {
 	display: flex;
 	align-items: center;
-  }
-  
-  .calendar-icon {
+}
+
+.calendar-icon {
 	margin-left: 10px;
 	cursor: pointer;
-  }
-  
-  .custom-input {
+}
+
+.custom-input {
 	padding: 5px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	display: inline-block;
 	width: 150px;
-  }
-  
-  .custom-input:focus {
+}
+
+.custom-input:focus {
 	outline: none;
 	border-color: #d47120;
-  }
+}
 
-  /* React Date picker */
-.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range{
-    border-radius: 0.3rem !important;
-    background-color: #032D30 !important;
-    color: #D8AD5D !important;
+/* React Date picker */
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+	border-radius: 0.3rem !important;
+	background-color: #032d30 !important;
+	color: #d8ad5d !important;
 }
 
 .react-datepicker__header {
-    text-align: center;
-	background-color: #032D30 !important;
-    color: #D8AD5D !important;
-    border-bottom: 1px solid #aeaeae;
-    border-top-left-radius: 0.3rem;
-    padding: 8px 0;
-    position: relative;
+	text-align: center;
+	background-color: #032d30 !important;
+	color: #d8ad5d !important;
+	border-bottom: 1px solid #aeaeae;
+	border-top-left-radius: 0.3rem;
+	padding: 8px 0;
+	position: relative;
 }
-.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
-    margin-top: 0;
-    color: #D8AD5D !important;
-    font-weight: bold;
-    font-size: 0.944rem;
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+	margin-top: 0;
+	color: #d8ad5d !important;
+	font-weight: bold;
+	font-size: 0.944rem;
 }
 .react-datepicker__day-name {
-    color: #D8AD5D !important;
-    display: inline-block;
-    width: 1.7rem;
-    line-height: 1.7rem;
-    text-align: center;
-    margin: 0.166rem;
+	color: #d8ad5d !important;
+	display: inline-block;
+	width: 1.7rem;
+	line-height: 1.7rem;
+	text-align: center;
+	margin: 0.166rem;
 }
 
 /* Top Info Cards Styles */
-.top-card-body{
-  width: 247px;
-  height: 80px;
-  display: flex;
-padding: 5px;
-flex-direction: column;
-align-items: center;
-gap: 0px;
-flex: 1 0 0;
-border: 1px solid #DDE1E6;
-background-color: #FFFF;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-flex: 1 0 0;
-margin-top: 5px;
+.top-card-body {
+	width: 247px;
+	height: 80px;
+	display: flex;
+	padding: 5px;
+	flex-direction: column;
+	align-items: center;
+	gap: 0px;
+	flex: 1 0 0;
+	border: 1px solid #dde1e6;
+	background-color: #ffff;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex: 1 0 0;
+	margin-top: 5px;
 }
-.top-card-title{
-color:  #697077;
-font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%; /* 22.4px */
+.top-card-title {
+	color: #697077;
+	font-family: Roboto;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%; /* 22.4px */
 }
-.card-data-text{
-  color: #21272A;
-  width: 100%;
+.card-data-text {
+	color: #21272a;
+	width: 100%;
 
-/* Heading/4 */
-font-family: Roboto;
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-line-height: 110%; /* 26.4px */
+	/* Heading/4 */
+	font-family: Roboto;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 110%; /* 26.4px */
 }
-.card-data-percentage{
-  color:  #21272A;
-text-align: center;
+.card-data-percentage {
+	color: #21272a;
+	text-align: center;
 
-/* Body/S */
-font-family: Roboto;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%; /* 19.6px */
-margin-left: 3.7rem;
-margin-top: 10px;
+	/* Body/S */
+	font-family: Roboto;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%; /* 19.6px */
+	margin-left: 3.7rem;
+	margin-top: 10px;
 }
-
 
 /* Chart Styles */
-.chart-container-div{
-  margin-left: 10px;
-  margin-top: 43px;
-  width: 308px !important;
-  height: 311px !important;
-  border: 2px solid #D8AD5D;
-  border-radius: 10px;
-  padding: 5%;
-  padding-left: 8% !important; 
-  padding-right: 8% !important;
-
+.chart-container-div {
+	margin-left: 10px;
+	margin-top: 43px;
+	width: 308px !important;
+	height: 311px !important;
+	border: 2px solid #d8ad5d;
+	border-radius: 10px;
+	padding: 5%;
+	padding-left: 8% !important;
+	padding-right: 8% !important;
 }
-.chart-title-text{
-  color: var(--CoolGray-90, #21272A);
+.chart-title-text {
+	color: var(--CoolGray-90, #21272a);
 
-/* Heading/6 */
-font-family: Roboto;
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: 110%; /* 19.8px */
+	/* Heading/6 */
+	font-family: Roboto;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 110%; /* 19.8px */
 }
-.piechart-first-on-dashboard{
-  height: 220px !important ;
-  width: 234.32px !important;
+.piechart-first-on-dashboard {
+	height: 220px !important ;
+	width: 234.32px !important;
 }
 
 /* Booking Request Card Body */
 
-.booking-request-card-body{
-width: 360px;
-height: 170px;
-flex-shrink: 0;
-border-radius: 8px;
-background: #FFF;
-box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.15);
-margin-top: 7px;
+.booking-request-card-body {
+	width: 360px;
+	height: 170px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.15);
+	margin-top: 7px;
 }
-.card-request-client-profile{
-  width: 112.048px !important;
-height: 69px;
-flex-shrink: 0;
-border-radius: 4px;
-margin-left: 24px;
-margin-top: 18px !important;
+.card-request-client-profile {
+	width: 112.048px !important;
+	height: 69px;
+	flex-shrink: 0;
+	border-radius: 4px;
+	margin-left: 24px;
+	margin-top: 18px !important;
 }
-.whishList-icon-booking-request-card{
-  width: 23.14px;
-height: 17px;
+.whishList-icon-booking-request-card {
+	width: 23.14px;
+	height: 17px;
+	margin-top: 23px !important;
+	margin-right: 21px;
+}
+.card-request-booking-client-name {
+	color: #333;
+	font-family: Rubik;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.3px;
+	width: 126.663px;
+	margin-top: 22px;
+	margin-left: 17px;
+}
+.card-request-booking-client-country-name {
+	width: 127.881px;
+	color: #0ebe7f;
+	font-family: Rubik;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.3px;
+	margin-top: -18px !important;
+	margin-left: 17px;
+}
+.card-request-booking-duration {
+	width: 118.137px;
+	color: #677294;
+	font-family: Rubik;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+	letter-spacing: -0.3px;
+	margin-top: -18px !important;
+	margin-left: 17px;
+}
+
+.card-request-booking-list-item-percentage {
+	color: #677294;
+	font-family: Rubik;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+	letter-spacing: -0.3px;
+}
+.card-request-booking-list-item-previous-records {
+	color: #677294;
+	font-family: Rubik;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+	letter-spacing: -0.3px;
+}
+.list-item-total {
+	color: #0ebe7f !important;
+	margin-left: 22px;
+	margin-top: -18px !important;
+}
+.booking-request-small-list-first {
+	margin-left: 12px;
+}
+.booking-request-small-list-second {
+	margin-left: 2rem;
+}
+.booking-request-room-availability {
+	color: #0ebe7f;
+	font-family: Rubik;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.3px;
+	margin-left: 23px;
+	margin-top: 5px !important;
+}
+.booking-request-room-no {
+	color: #677294;
+	font-family: Rubik;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.3px;
+	margin-left: 23px;
+	margin-top: -15px !important;
+}
+.action-button-booking-request {
+	width: 136.406px;
+	height: 34px;
+	flex-shrink: 0;
+	border-radius: 4px;
+	background: #032d30;
+	color: #fff;
+	font-family: Rubik;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-right: 24px;
+}
+
+.profile-small-card-search-results {
+	width: 200px;
+	height: 37px;
+	background-color: transparent;
+	border: 0.5px solid #d8ad5d;
+	display: flex !important;
+	margin-top: 2px;
+}
+.small-card-profile-picture {
+	border-radius: 50% !important;
+	width: 30px;
+	height: 30px;
+	margin-top: 3px;
+	margin-left: 18px;
+}
+.small-card-profile-name {
+	color: #333;
+	font-family: Rubik;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.3px;
+	margin-top: 6px;
+	margin-left: 27px;
+}
+
+.client-action-button {
+	width: 200px;
+	height: 37px;
+	flex-shrink: 0;
+	border-radius: 4px;
+	background: #032d30;
+	color: #fff;
+	font-family: Rubik;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-left: -66px;
+	margin-top: 25px;
+}
+.client-action-button-red {
+	width: 200px;
+	height: 37px;
+	flex-shrink: 0;
+	border-radius: 4px;
+	background: #6f0606;
+	color: #fff;
+	font-family: Rubik;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-left: -66px;
+	margin-top: 25px;
+}
+
+/* room-info-card-component  */
+
+.room-info-card-component {
+	width: 324px;
+	height: 65px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.13);
+  margin-top: 4px !important;
+}
+.room-info-card-component:hover {
+	width: 324px;
+	height: 65px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.13);
+  margin-top: 4px !important;
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+
+.room-icon-on-room-info-card {
+	width: 34.398px;
+	height: 30.611px;
+	flex-shrink: 0;
+	margin-top: 15px !important;
+  margin-left: 15px !important;
+}
+.room-info-card-text-room-no {
+	color: #333;
+	font-family: Rubik;
+	font-style: normal;
+  margin-top: 8px !important;
+}
+.room-info-card-text-client-name{
+  color: #333;
+	font-family: Rubik;
+	font-style: normal;
+  margin-top: -6px !important;
+}
+.room-info-card-text-room-status{
+color: #0EBE7F;
+font-family: Rubik;
 margin-top: 23px !important;
-margin-right: 21px;
-}
-.card-request-booking-client-name{
-  color: #333;
-font-family: Rubik;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: -0.3px;
-width: 126.663px;
-margin-top: 22px;
-margin-left: 17px;
-
-}
-.card-request-booking-client-country-name{
-  width: 127.881px;
-  color: #0EBE7F;
-font-family: Rubik;
-font-size: 13px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.3px;
-margin-top: -18px !important;
-margin-left: 17px;
-}
-.card-request-booking-duration{
-  width: 118.137px;
-  color: #677294;
-font-family: Rubik;
-font-size: 12px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-letter-spacing: -0.3px;
-margin-top: -18px !important;
-margin-left: 17px;
-}
-
-.card-request-booking-list-item-percentage{
-  color: #677294;
-font-family: Rubik;
-font-size: 11px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-letter-spacing: -0.3px;
-}
-.card-request-booking-list-item-previous-records{
-  color: #677294;
-  font-family: Rubik;
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  letter-spacing: -0.3px;  
-}
-.list-item-total{
-  color: #0EBE7F !important;
-  margin-left: 22px;
-  margin-top: -18px !important;
-}
-.booking-request-small-list-first{
-  margin-left: 12px;
-}
-.booking-request-small-list-second{
-  margin-left: 2rem;
-}
-.booking-request-room-availability{
-  color: #0EBE7F;
-font-family: Rubik;
-font-size: 13px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: -0.3px;
-margin-left: 23px;
-margin-top: 5px !important;
-}
-.booking-request-room-no{
-  color: #677294;
-font-family: Rubik;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: -0.3px;
-margin-left: 23px;
-margin-top: -15px !important;
-}
-.action-button-booking-request{
-  width: 136.406px;
-height: 34px;
-flex-shrink: 0;
-border-radius: 4px;
-background: #032D30;
-color: #FFF;
-font-family: Rubik;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-margin-right: 24px; 
-
-}
-
-.profile-small-card-search-results{
-  width: 200px;
-  height: 37px;
-  background-color: transparent;
-  border: 0.5px solid #D8AD5D;
-  display: flex !important;
-  margin-top: 2px;
-}
-.small-card-profile-picture{
-  border-radius: 50% !important;
-  width: 30px;
-  height: 30px;
-  margin-top: 3px;
-  margin-left: 18px;
-
-}
-.small-card-profile-name{
-  color: #333;
-font-family: Rubik;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: -0.3px;
-margin-top:6px;
-margin-left: 27px;
-}
-
-.client-action-button{
-  width: 200px;
-  height: 37px;
-  flex-shrink: 0;
-  border-radius: 4px;
-  background: #032D30;
-  color: #FFF;
-  font-family: Rubik;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-left: -66px;
-  margin-top: 25px;
-
-}
-.client-action-button-red{
-  width: 200px;
-  height: 37px;
-  flex-shrink: 0;
-  border-radius: 4px;
-  background: #6F0606;
-  color: #FFF;
-  font-family: Rubik;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-left: -66px;
-  margin-top: 25px;
-
 }
