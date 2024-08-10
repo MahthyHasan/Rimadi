@@ -85,7 +85,7 @@ function Layout({ children }) {
 											? "side-menu-item side-menu-active"
 											: "side-menu-item"
 									}
-									to={"/DrugsDoctorPage"}>
+									to={"/manageR"}>
 									<div className={"d-flex"}>
 										<img
 											src={ManageRoomIcon}

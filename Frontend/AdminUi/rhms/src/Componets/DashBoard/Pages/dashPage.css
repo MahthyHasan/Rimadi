@@ -286,3 +286,9 @@
 	color: #d8ad5d;
 	margin-left: 3px !important;
 }
+.properties-space-for-cards {
+	height: 530px !important;
+	border-radius: 8px;
+	border: 1px solid #d8ad5d;
+	background: rgba(217, 217, 217, 0);
+}
