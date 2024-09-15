@@ -6,6 +6,7 @@ import "../../DashBoard/Pages/dashPage.css";
 import "./mrPage.css";
 import TopCardsSection from "../Components/TopCardsSection";
 import FilterIcon from "../../../assets/DashBoard/filter.svg";
+import PropertiesSingleCArd from "../Components/PropertiesSingleCArd";
 
 const tabs = [
 	{ label: "Properties", link: "/manageR/properties" },
@@ -40,7 +41,111 @@ function Properties() {
 							/>
 						</div>
 					</div>
-          <div class="d-flex justify-content-center">...</div>
+					<div className="row">
+						<div className="col-4">
+							<PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+						</div>
+						<div className="col-4">
+            <PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+            </div>
+						<div className="col-4">
+            <PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+            </div>
+					</div>
+          <div className="row">
+						<div className="col-4">
+							<PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+						</div>
+						<div className="col-4">
+            <PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+            </div>
+						<div className="col-4">
+            <PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+            </div>
+					</div>
+          <div className="row">
+						<div className="col-4">
+							<PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+						</div>
+						<div className="col-4">
+            <PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+            </div>
+						<div className="col-4">
+            <PropertiesSingleCArd
+                propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+            </div>
+					</div>
 				</div>
 			</div>
 		</Layout>
