@@ -16,3 +16,15 @@
     width: 22.70119rem;
 }
 
+.add-property-total-box{
+    margin-top: 1.7rem;
+    padding-right: 2.75rem !important;
+    padding-left: 2.75rem !important;
+    width: 62rem !important;
+    height: 45.4375rem !important;
+    border: 2px solid #d8ad5d;
+    border-radius: 10px;
+    padding: 5%;
+    padding-top: 4.73rem !important;
+    padding-bottom: 1.5rem !important;
+}

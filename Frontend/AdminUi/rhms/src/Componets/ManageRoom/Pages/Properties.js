@@ -147,6 +147,10 @@ function Properties() {
             </div>
 					</div>
 				</div>
+        <div className="d-flex flex-row-reverse mt-4">
+		<button className='action-button-booking-request'>Add a Property</button>
+          
+        </div>
 			</div>
 		</Layout>
 	);
