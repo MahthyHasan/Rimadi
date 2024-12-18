@@ -17,7 +17,7 @@ function App() {
          <Route path="/dashboard/bill" element={<Bill />} />
          <Route path="/manageR" element={<Properties />} /> 
          <Route path="/manageR/properties" element={<Properties />} />
-         <Route path="/manageR/properties/addProperties" element={<AddPropertise />} />
+         <Route path="/manageR/properties-addProperty" element={<AddPropertise />} />
 
       </Routes>
     </div>

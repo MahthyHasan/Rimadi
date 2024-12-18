@@ -7,6 +7,7 @@ import "./mrPage.css";
 import TopCardsSection from "../Components/TopCardsSection";
 import FilterIcon from "../../../assets/DashBoard/filter.svg";
 import PropertiesSingleCArd from "../Components/PropertiesSingleCArd";
+import { Link } from "react-router-dom";
 
 const tabs = [
 	{ label: "Properties", link: "/manageR/properties" },
@@ -44,7 +45,7 @@ function Properties() {
 					<div className="row">
 						<div className="col-4">
 							<PropertiesSingleCArd
-                propertyA="Available"
+								propertyA="Available"
 								roomNo="20"
 								propertyName="Blue Villa"
 								location="Batticaloa, Srilanka"
@@ -53,33 +54,9 @@ function Properties() {
 								totalAccomadateCount="100"
 							/>
 						</div>
-						<div className="col-4">
-            <PropertiesSingleCArd
-                propertyA="Available"
-								roomNo="20"
-								propertyName="Blue Villa"
-								location="Batticaloa, Srilanka"
-								roomType="Luxary, AC, Non AC"
-								rating="8.8"
-								totalAccomadateCount="100"
-							/>
-            </div>
-						<div className="col-4">
-            <PropertiesSingleCArd
-                propertyA="Available"
-								roomNo="20"
-								propertyName="Blue Villa"
-								location="Batticaloa, Srilanka"
-								roomType="Luxary, AC, Non AC"
-								rating="8.8"
-								totalAccomadateCount="100"
-							/>
-            </div>
-					</div>
-          <div className="row">
 						<div className="col-4">
 							<PropertiesSingleCArd
-                propertyA="Available"
+								propertyA="Available"
 								roomNo="20"
 								propertyName="Blue Villa"
 								location="Batticaloa, Srilanka"
@@ -88,33 +65,22 @@ function Properties() {
 								totalAccomadateCount="100"
 							/>
 						</div>
-						<div className="col-4">
-            <PropertiesSingleCArd
-                propertyA="Available"
-								roomNo="20"
-								propertyName="Blue Villa"
-								location="Batticaloa, Srilanka"
-								roomType="Luxary, AC, Non AC"
-								rating="8.8"
-								totalAccomadateCount="100"
-							/>
-            </div>
-						<div className="col-4">
-            <PropertiesSingleCArd
-                propertyA="Available"
-								roomNo="20"
-								propertyName="Blue Villa"
-								location="Batticaloa, Srilanka"
-								roomType="Luxary, AC, Non AC"
-								rating="8.8"
-								totalAccomadateCount="100"
-							/>
-            </div>
-					</div>
-          <div className="row">
 						<div className="col-4">
 							<PropertiesSingleCArd
-                propertyA="Available"
+								propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col-4">
+							<PropertiesSingleCArd
+								propertyA="Available"
 								roomNo="20"
 								propertyName="Blue Villa"
 								location="Batticaloa, Srilanka"
@@ -124,8 +90,8 @@ function Properties() {
 							/>
 						</div>
 						<div className="col-4">
-            <PropertiesSingleCArd
-                propertyA="Available"
+							<PropertiesSingleCArd
+								propertyA="Available"
 								roomNo="20"
 								propertyName="Blue Villa"
 								location="Batticaloa, Srilanka"
@@ -133,10 +99,10 @@ function Properties() {
 								rating="8.8"
 								totalAccomadateCount="100"
 							/>
-            </div>
+						</div>
 						<div className="col-4">
-            <PropertiesSingleCArd
-                propertyA="Available"
+							<PropertiesSingleCArd
+								propertyA="Available"
 								roomNo="20"
 								propertyName="Blue Villa"
 								location="Batticaloa, Srilanka"
@@ -144,13 +110,51 @@ function Properties() {
 								rating="8.8"
 								totalAccomadateCount="100"
 							/>
-            </div>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col-4">
+							<PropertiesSingleCArd
+								propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+						</div>
+						<div className="col-4">
+							<PropertiesSingleCArd
+								propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+						</div>
+						<div className="col-4">
+							<PropertiesSingleCArd
+								propertyA="Available"
+								roomNo="20"
+								propertyName="Blue Villa"
+								location="Batticaloa, Srilanka"
+								roomType="Luxary, AC, Non AC"
+								rating="8.8"
+								totalAccomadateCount="100"
+							/>
+						</div>
 					</div>
 				</div>
-        <div className="d-flex flex-row-reverse mt-4">
-		<button className='action-button-booking-request'>Add a Property</button>
-          
-        </div>
+				<div className="d-flex flex-row-reverse mt-4">
+					<Link to="/manageR/properties-addProperty">
+						<button className="action-button-booking-request">
+							Add a Property
+						</button>
+					</Link>
+				</div>
 			</div>
 		</Layout>
 	);

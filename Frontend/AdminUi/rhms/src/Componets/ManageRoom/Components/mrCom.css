@@ -1,9 +1,95 @@
 .booking-request-card-body-rm {
-    width: 100%;
-    height: 170px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.15);
-    margin-top: 7px;
+	width: 100%;
+	height: 170px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.15);
+	margin-top: 7px;
+}
+.TopTextInput {
+	width: 100%;
+	height: 3.375rem;
+	flex-shrink: 0;
+	border-radius: 0.75rem;
+	border: 1px solid #d8ad5d;
+	background: #fff;
+	text-align: center; /* Center the input text */
+}
+
+.TopTextInput::placeholder {
+	color: #aaa; /* Optional: Placeholder color */
+	text-align: center; /* Center the placeholder text */
+}
+.TopTextInputLabel {
+	width: 11.1875rem;
+	height: 1.3125rem;
+	flex-shrink: 0;
+	color: #21272a;
+
+	/* Heading/6 */
+	font-family: Roboto;
+	font-size: 1.125rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 110%; /* 1.2375rem */
+}
+.floor-deatails-form-heading {
+	width: 11.1875rem;
+	height: 1.3125rem;
+	flex-shrink: 0;
+	color: #21272a;
+
+	/* Heading/6 */
+	font-family: Roboto;
+	font-size: 1.125rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 110%; /* 1.2375rem */
+}
+.floor-details-box {
+	width: 100%;
+	height: auto;
+	flex-shrink: 0;
+	border-radius: 0.5rem;
+	border: 1px solid #d8ad5d;
+	background: rgba(217, 217, 217, 0);
+    padding: 10px;
+}
+.floor-details-lable {
+	width: 100%;
+	height: 1.3125rem;
+	flex-shrink: 0;
+	color: #21272a;
+	font-family: Roboto;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%; /* 0.9625rem */
+}
+.floor-details-input-field {
+	width: 100%;
+	height: 2.32031rem;
+	flex-shrink: 0;
+	border-radius: 0.75rem;
+	border: 1px solid #d8ad5d;
+	background: #fff;
+	text-align: center;
+}
+.floor-details-input-field::placeholder {
+	color: #21272a;
+	text-align: center;
+}
+.floor-details-form-submit-button {
+	width: 8.79169rem;
+	height: 2.125rem;
+	flex-shrink: 0;
+	border-radius: 0.25rem;
+	background: #032d30;
+	color: #fff;
+	font-family: Rubik;
+	font-size: 0.75rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
 }
