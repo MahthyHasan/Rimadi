@@ -18,6 +18,9 @@ function App() {
          <Route path="/manageR" element={<Properties />} /> 
          <Route path="/manageR/properties" element={<Properties />} />
          <Route path="/manageR/properties-addProperty" element={<AddPropertise />} />
+         <Route path="/test" element={<tes />} />
+
+
 
       </Routes>
     </div>
