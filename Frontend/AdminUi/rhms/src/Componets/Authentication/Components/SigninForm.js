@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import LogoPath from "../../../assets/Layout/logo.png";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,7 @@ export default function SigninForm() {
   });
 
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: async ({ username, password }) => {
@@ -31,6 +32,8 @@ export default function SigninForm() {
     },
     onSuccess: () => {
       toast.success("Login successful");
+      console.log("Navigating to /dashboard");
+      queryClient.invalidateQueries("authUser");
       navigate("/dashboard"); // Navigate to dashboard
     },
     onError: (err) => {

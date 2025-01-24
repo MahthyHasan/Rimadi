@@ -44,156 +44,94 @@ function Overview() {
 
 	return (
 		<Layout>
-			<div className="container">
-				<div className="top-Navigation-bar">
+			<div className="container mx-auto px-4">
+				<div className="mb-4">
 					<TopNavigationBar tabs={tabs} />
 				</div>
-				<div className="d-flex justify-content-end align-items-end">
-					<div className="d-flex flex-column">
-						<div className="row">
-							<p>Start Date</p>
-						</div>
-						<div className="CustomDatePicker-on-overview-page-start-date">
-							<CustomDatePicker
-								startDate={new Date()}
-								onChange={handleDateChange}
-								dateFormat="MM/dd/yyyy"
-							/>
-						</div>
+				<div className="flex flex-wrap justify-between items-end mb-4 gap-4">
+					<div className="flex flex-col">
+						<p className="mb-2">Start Date</p>
+						<CustomDatePicker
+							startDate={new Date()}
+							onChange={handleDateChange}
+							dateFormat="MM/dd/yyyy"
+						/>
 					</div>
-					<div className="mid-block-with-arrow"></div>
-					<div className="d-flex flex-column">
-						<div className="row">
-							<p>End Date</p>
-						</div>
-						<div className="CustomDatePicker-on-overview-page-end-date">
-							<CustomDatePicker
-								startDate={new Date()}
-								onChange={handleDateChange}
-								dateFormat="MM/dd/yyyy"
-							/>
-						</div>
+					<div className="flex flex-col">
+						<p className="mb-2">End Date</p>
+						<CustomDatePicker
+							startDate={new Date()}
+							onChange={handleDateChange}
+							dateFormat="MM/dd/yyyy"
+						/>
 					</div>
 				</div>
-				<div className="top-info-cards">
+				<div className="mb-8">
 					<TopCardsSection />
 				</div>
-				<div className="row">
-					<div className="col-4 mt-4">
-						<div className="row">
-							<div className="chart-container-div">
-								<p className="chart-title-text">Expense Meter</p>
-								<Doughnut data={data} className="piechart-first-on-dashboard" />
-							</div>
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+					{/* Left Column */}
+					<div className="space-y-4">
+						<div className="bg-white p-4 rounded shadow">
+							<p className="text-lg font-semibold mb-4">Expense Meter</p>
+							<Doughnut data={data} />
 						</div>
-						<div className="row mt-2">
-							<div className="chart-container-div">
-								<p className="chart-title-text">Income Meter</p>
-								<Doughnut data={data} className="piechart-first-on-dashboard" />
-							</div>
+						<div className="bg-white p-4 rounded shadow">
+							<p className="text-lg font-semibold mb-4">Income Meter</p>
+							<Doughnut data={data} />
 						</div>
 					</div>
-					<div className="col-4 mt-4">
-						<div className="booking-requests-div">
-							<BookingRequestCard
-								roomA="Available"
-								roomNo="G101"
-								clientName="Mahthy Hasan"
-								country="Sri Lanka"
-								duration="3 Nights"
-								rating="99"
-								pRecords="12"
-							/>
-							<BookingRequestCard
-								roomA="Available"
-								roomNo="G101"
-								clientName="Mahthy Hasan"
-								country="Sri Lanka"
-								duration="3 Nights"
-								rating="99"
-								pRecords="12"
-							/>
-							<BookingRequestCard
-								roomA="Available"
-								roomNo="G101"
-								clientName="Mahthy Hasan"
-								country="Sri Lanka"
-								duration="3 Nights"
-								rating="99"
-								pRecords="12"
-							/>
-							<BookingRequestCard
-								roomA="Available"
-								roomNo="G101"
-								clientName="Mahthy Hasan"
-								country="Sri Lanka"
-								duration="3 Nights"
-								rating="99"
-								pRecords="12"
-							/>
-							<BookingRequestCard
-								roomA="Available"
-								roomNo="G101"
-								clientName="Mahthy Hasan"
-								country="Sri Lanka"
-								duration="3 Nights"
-								rating="99"
-								pRecords="12"
-							/>
-						</div>
+
+					{/* Middle Column */}
+					<div className="space-y-4 overflow-y-auto max-h-[calc(100vh-300px)]">
+						{Array(5)
+							.fill(0)
+							.map((_, index) => (
+								<BookingRequestCard
+									key={index}
+									roomA="Available"
+									roomNo="G101"
+									clientName="Mahthy Hasan"
+									country="Sri Lanka"
+									duration="3 Nights"
+									rating="99"
+									pRecords="12"
+								/>
+							))}
 					</div>
-					<div className="col-4 mt-4">
-						<div className="row">
-							<div className="client-action-div">
-								<div className="row">
-									<p className="client-action-heading">Client Actions</p>
-									<p className="clind-action-headline-description">
-										Enter NIC No or Passport No or Email Address.
-									</p>
-								</div>
-								<div className="row justify-content-center">
-									<div className="col-6 col-md-4">
-										<input
-											type="text"
-											className="client-action-input-text-field"
-											placeholder="NIC No or Passport No or Email "
-										/>
-									</div>
-								</div>
-								<div className="row justify-content-center">
-									<div className="col-6 col-md-4">
-										<div className="search-profile-div-profile-action">
-											<PcSmall name="Mahthy" />
-											<PcSmall name="Mahthy" />
-											<PcSmall name="Mahthy" />
-											<PcSmall name="Mahthy" />
-										</div>
-									</div>
-								</div>
-								<div className="row justify-content-center">
-									<div className="col-6 col-md-4">
-										<button className="client-action-button">Action</button>
-									</div>
-								</div>
+
+					{/* Right Column */}
+					<div className="space-y-4">
+						<div className="bg-white p-4 rounded shadow">
+							<p className="text-lg font-semibold mb-4">Client Actions</p>
+							<p className="mb-4">
+								Enter NIC No or Passport No or Email Address.
+							</p>
+							<input
+								type="text"
+								className="w-full p-2 border border-gray-300 rounded mb-4"
+								placeholder="NIC No or Passport No or Email"
+							/>
+							<div className="flex flex-wrap gap-2 mb-4">
+								{Array(4)
+									.fill(0)
+									.map((_, index) => (
+										<PcSmall key={index} name="Mahthy" />
+									))}
 							</div>
+							<button className="bg-blue-500 text-white px-4 py-2 rounded">
+								Action
+							</button>
 						</div>
-						<div className="row">
-							<div className="counter-availability">
-								<div className="row">
-									<p className="client-action-heading">Counter Availability</p>
-								</div>
-								<div className="row justify-content-center">
-									<div className="col-6 col-md-4">
-										<button className="client-action-button">Available</button>
-									</div>
-								</div>
-								<div className="row justify-content-center  mt-4">
-									<div className="col-6 col-md-4">
-										<button className="client-action-button-red">
-											Not Available
-										</button>
-									</div>
-								</div>
+						<div className="bg-white p-4 rounded shadow">
+							<p className="text-lg font-semibold mb-4">Counter Availability</p>
+							<div className="flex flex-col space-y-4">
+								<button className="bg-green-500 text-white px-4 py-2 rounded">
+									Available
+								</button>
+								<button className="bg-red-500 text-white px-4 py-2 rounded">
+									Not Available
+								</button>
 							</div>
 						</div>
 					</div>

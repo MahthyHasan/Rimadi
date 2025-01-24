@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./dashPage.css";
 import Layout from "../../../Layout/Layout";
@@ -7,6 +7,7 @@ import LineChartExpences from "../Components/LineChartExpences";
 import ExpenseTable from "../Components/ExpenseTable";
 import FilterIcon from "../../../assets/DashBoard/filter.svg";
 import CustomDatePicker from "../Components/CustomDatePicker";
+import AddAccountModel from "../Components/AddAccountModel";
 
 const tabs = [
 	{ label: "Overview", link: "/dashboard/overview" },
@@ -60,132 +61,134 @@ const data = [
 	},
 ];
 
+const initialData = [
+	{
+		detail: "Detail 1",
+		debit: "125 USD",
+		credit: "125 USD",
+		balance: "125 USD",
+	},
+	{
+		detail: "Detail 2",
+		debit: "125 USD",
+		credit: "125 USD",
+		balance: "125 USD",
+	},
+];
+
 function Expenses() {
 	const handleDateChange = (date) => {
 		console.log("Selected date:", date);
 	};
 
+	const [openModel, setOpenModel] = useState(false);
+	const [data, setData] = useState([]);
+
+	const handleSave = (newEntry) => {
+		setData([...data, newEntry]);
+	};
+
 	return (
 		<Layout>
-			<div className="container">
-				<div className="top-Navigation-bar">
+			<div className="container mx-auto p-4">
+				<div className="mb-4">
 					<TopNavigationBar tabs={tabs} />
 				</div>
-				<div className="row mt-2">
-									<div className="col-6">
-										<p className="chart-title-text mt-2">Expense Vs Income</p>
-									</div>
-									<div className="col-6 d-flex justify-content-end">
-										<CustomDatePicker
-											startDate={new Date()}
-											onChange={handleDateChange}
-											dateFormat="MM/dd/yyyy"
-										/>
-									</div>
-								</div>
-				<div className="row">
-					<div className="dashboard-expense-page-chart">
-						<LineChartExpences />
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+					<p className="chart-title-text mt-2">Expense Vs Income</p>
+					<div className="flex justify-end">
+						<CustomDatePicker
+							startDate={new Date()}
+							onChange={handleDateChange}
+							dateFormat="MM/dd/yyyy"
+						/>
 					</div>
 				</div>
-				<div className="row table-row-containing-sector">
-					<div className="col-7 table-container-for-expenses-records">
+				<div className="my-4">
+					<LineChartExpences />
+				</div>
+				<div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+					<div className="lg:col-span-2">
 						<p className="chart-title-text">Accounts Table</p>
-						<div className="row">
-							<div className="col-2">
-								<button className="Filter-button-on-expense-table">
-									<img
-										className="filter-icon-inside-a-button"
-										src={FilterIcon}
-									/>
-									<h6 className="filter-text-inside-a-button mt-2">Filter</h6>
-								</button>
-							</div>
-							<div className="col-7">
-								<input
-									type="text"
-									className="expense-table-input-text-field"
-									placeholder="Search Content"
+						<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+							<button className="Filter-button-on-expense-table flex items-center gap-2">
+								<img
+									className="filter-icon-inside-a-button"
+									src={FilterIcon}
+									alt="Filter Icon"
 								/>
-							</div>
-							<div className="col-3">
+								<h6 className="filter-text-inside-a-button mt-2">Filter</h6>
+							</button>
+							<input
+								type="text"
+								className="expense-table-input-text-field col-span-2"
+								placeholder="Search Content"
+							/>
+							<button
+								className="add-expense-button-above-expense-table"
+								onClick={() => setOpenModel(true)}>
+								<h5 className="add-expense-button-above-expense-table-text mt-1">
+									Add Entry
+								</h5>
+							</button>
+							<AddAccountModel
+								open={openModel}
+								onClose={() => setOpenModel(false)}
+								onSave={handleSave}
+							/>
+						</div>
+						<div>
+							<ExpenseTable data={data} />
+						</div>
+					</div>
+					<div>
+						<div className="mb-6 p-4 border rounded-lg">
+							<p className="chart-title-text mt-2">Generate Statement</p>
+							<CustomDatePicker
+								startDate={new Date()}
+								onChange={handleDateChange}
+								dateFormat="MM/dd/yyyy"
+							/>
+							<div className="flex justify-center mt-4">
 								<button className="add-expense-button-above-expense-table">
 									<h5 className="add-expense-button-above-expense-table-text mt-1">
-										Add Entry
+										Generate
 									</h5>
 								</button>
 							</div>
 						</div>
-						<div className="row mt-3">
-							<div className="col-12 table-contain-container">
-								<ExpenseTable data={data} />
+						<div className="mb-6 p-4 border rounded-lg">
+							<p className="chart-title-text mt-2 text-center">
+								Set Expense Target
+							</p>
+							<input
+								type="number"
+								className="expense-table-input-text-field w-full mt-2"
+								placeholder="Expense Target"
+							/>
+							<div className="flex justify-center mt-4">
+								<button className="add-expense-button-above-expense-table">
+									<h5 className="add-expense-button-above-expense-table-text mt-1">
+										Set
+									</h5>
+								</button>
 							</div>
 						</div>
-					</div>
-					<div className="col-5 table-container-for-expenses-records-right">
-						<div className="row generate-staatement-div">
-							<div className="col-12">
-								<div className="row mt-2">
-									<div className="col-6">
-										<p className="chart-title-text mt-2">Generate Statement</p>
-									</div>
-									<div className="col-6">
-										<CustomDatePicker
-											startDate={new Date()}
-											onChange={handleDateChange}
-											dateFormat="MM/dd/yyyy"
-										/>
-									</div>
-								</div>
-								<div className="row d-flex justify-content-center">
-									<button className="add-expense-button-above-expense-table">
-										<h5 className="add-expense-button-above-expense-table-text mt-1">
-											Generate
-										</h5>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div className="row mt-3 generate-staatement-div">
-							<div className="col-12">
-								<div className="row d-flex justify-content-center text-center">
-									<p className="chart-title-text mt-2">Set Expense Target</p>
-								</div>
-								<div className="row d-flex justify-content-center text-center">
-									<input
-										type="number"
-										className="expense-table-input-text-field"
-										placeholder="Expense Target"
-									/>
-								</div>
-								<div className="row  mt-2 d-flex justify-content-center">
-									<button className="add-expense-button-above-expense-table">
-										<h5 className="add-expense-button-above-expense-table-text mt-1">
-											Set
-										</h5>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div className="row mt-3 generate-staatement-div">
-							<div className="col-12">
-								<div className="row d-flex justify-content-center text-center">
-									<p className="chart-title-text mt-2">Set Income Target</p>
-								</div>
-								<div className="row d-flex justify-content-center text-center">
-									<input
-										type="number"
-										className="expense-table-input-text-field"
-										placeholder="Income Target"
-									/>
-								</div>
-								<div className="row  mt-2 d-flex justify-content-center">
-									<button className="add-expense-button-above-expense-table">
-										<h5 className="add-expense-button-above-expense-table-text mt-1">
-											Set
-										</h5>
-									</button>
-								</div>
+						<div className="p-4 border rounded-lg">
+							<p className="chart-title-text mt-2 text-center">
+								Set Income Target
+							</p>
+							<input
+								type="number"
+								className="expense-table-input-text-field w-full mt-2"
+								placeholder="Income Target"
+							/>
+							<div className="flex justify-center mt-4">
+								<button className="add-expense-button-above-expense-table">
+									<h5 className="add-expense-button-above-expense-table-text mt-1">
+										Set
+									</h5>
+								</button>
 							</div>
 						</div>
 					</div>
