@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -10,5 +11,7 @@ module.exports = {
       'rmdYellow': '#d8ad5d',      
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
