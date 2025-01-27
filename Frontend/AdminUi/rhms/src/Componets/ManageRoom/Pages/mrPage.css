@@ -28,3 +28,33 @@
     padding-top: 4.73rem !important;
     padding-bottom: 1.5rem !important;
 }
+
+
+
+/* 
+.modal {
+    z-index: 1050;
+    display: block !important;
+    background-color: black !important;
+    color: white !important;
+  }
+  
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1049;
+  }
+  
+  .modal-dialog {
+    margin: 1.75rem auto;
+  }
+  
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    background-color: black !important;
+    color: white !important;
+  }
+  #_rht_toaster:empty {
+    display: none;
+  }
+   */

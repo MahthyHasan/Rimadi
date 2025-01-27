@@ -2,6 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes.js';
 import accountRoutes from './routes/account.routes.js';
+import propertyRoutes from './routes/property.routes.js';
+import floorRoutes from './routes/floor.routes.js';
+import roomRoutes from './routes/room.routes.js';
 import connectMongoDB from './db/connectMongoDB.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -21,6 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/account", accountRoutes);
+app.use("/api/property", propertyRoutes);
+app.use("/api/floor", floorRoutes);
+app.use("/api/room", roomRoutes);
 
 app.listen(port, () => {
     console.log('Server started at http://localhost:5001');

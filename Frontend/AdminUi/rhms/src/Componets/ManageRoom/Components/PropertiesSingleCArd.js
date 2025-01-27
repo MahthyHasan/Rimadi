@@ -1,48 +1,55 @@
-import React from 'react'
-import ClientProfilePath from "../../../assets/ManageRoom/propertySingle.png";
-import "./mrCom.css";
-import "../../DashBoard/Components/dashCom.css"
-function PropertiesSingleCArd({propertyA, roomNo, propertyName, location, roomType, rating, totalAccomadateCount}) {
-  return (
-    <div className='booking-request-card-body-rm'>
-      <div className='row'>
-        <div className='col-4'>
-            <div className='row'>
-                <img
-                src={ClientProfilePath}
-                className='card-request-client-profile'
-                />
-            </div>
-            <div className='row'>
-                <p className='booking-request-room-availability'>{propertyA}</p>
-            </div>
-            <div className='row'>
-                <p className='booking-request-room-no'>Total No of Rooms : {roomNo} </p>
-            </div>
-        </div>
-        <div className='col-8'>
-            <div className='row'>
-                <div className='col-6'><p className='card-request-booking-client-name'>{propertyName}</p></div>               
-            </div>
-            <div className='row'>
-            <p className='card-request-booking-client-country-name'>{location}</p>
-            <p className='card-request-booking-duration'>{roomType}</p>
-            </div>
-            <div className='row'>  
-                <ul className='d-flex list-item-total'>
-                    <li className='booking-request-small-list-first'><p className='card-request-booking-list-item-percentage'>{rating}</p></li>
-                    <li className='booking-request-small-list-second'><p className='card-request-booking-list-item-previous-records'>{totalAccomadateCount} People</p></li>
-                </ul>
-            </div>
-            <div className='row'>
-                <div className='col-12 d-flex justify-content-end'>
-                    <button className='action-button-booking-request'>View</button>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  )
+import React from "react";
+import { Link } from "react-router-dom";
+
+function PropertiesSingleCard({ property }) {
+	const { name, address, description, image, policies, availability } =
+		property;
+
+	return (
+		<div className="bg-rmdYellow/30 shadow-lg rounded-lg p-4 mt-2 w-full flex flex-col md:flex-row gap-2">
+			<div className="md:w-1/4 flex justify-center items-top">
+				<img
+					src={image}
+					alt={name}
+					className="rounded-full w-[4rem] h-[4rem] object-cover"
+				/>
+			</div>
+			<div className="md:w-3/4 flex flex-col justify-between">
+				<div>
+					<h2 className="text-lg font-bold text-rmdGreen truncate">{name}</h2>
+					<p className="text-sm text-rmdGreen mt-[-10px] truncate">{address}</p>
+					<p className="text-sm text-rmdGreen mt-[-20px]">
+						{availability ? (
+							<p className="text-green-500">Available</p>
+						) : (
+							<p className="text-red-500">Not Available</p>
+						)}
+					</p>
+				</div>
+				<div className="mt-1 md:mt-0">
+					<ul className="flex flex-col md:flex-row justify-center gap-1 ml-[-35px]">
+						<li>
+							<p className="text-sm text-rmdGreen">
+								<strong>Check-In Time:</strong> {policies.checkInTime}
+							</p>
+						</li>
+						<li>
+							<p className="text-sm text-rmdGreen">
+								<strong>Check-Out Time:</strong> {policies.checkOutTime}
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div className="flex flex-col justify-end items-end">
+					<Link to="/manageR/viewProperty">
+						<button className="bg-rmdGreen text-white px-2 py-1 rounded-lg">
+							View
+						</button>
+					</Link>
+				</div>
+			</div>
+		</div>
+	);
 }
 
-export default PropertiesSingleCArd
+export default PropertiesSingleCard;

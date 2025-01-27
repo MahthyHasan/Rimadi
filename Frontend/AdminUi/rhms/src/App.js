@@ -1,18 +1,26 @@
 import React from "react";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navigate, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
+
 import Overview from "./Componets/DashBoard/Pages/Overview";
 import Expenses from "./Componets/DashBoard/Pages/Expenses";
 import Bill from "./Componets/DashBoard/Pages/Bill";
 import Properties from "./Componets/ManageRoom/Pages/Properties";
-import AddPropertise from "./Componets/ManageRoom/Pages/AddPropertise";
 import SignUp from "./Componets/Authentication/Pages/SignUp";
 import Login from "./Componets/Authentication/Pages/Login";
-import { Toaster } from "react-hot-toast";
-import { useQuery } from "@tanstack/react-query";
+import ViewProperty from "./Componets/ManageRoom/Pages/ViewProperty";
+import PropertyManagement from "./Componets/ManageRoom/Pages/PropertyManagement";
 
 function App() {
-	const { data:authUser, isLoading, error, isError } = useQuery({
+	const {
+		data: authUser,
+		isLoading,
+		error,
+		isError,
+	} = useQuery({
 		queryKey: "authUser",
 		queryFn: async () => {
 			try {
@@ -56,18 +64,54 @@ function App() {
 	return (
 		<div>
 			<Routes>
-				<Route path="/" element={authUser ? <Overview /> : <Navigate to="/Login" />} />
-				<Route path="/dashboard" element={authUser ? <Overview /> : <Navigate to="/Login" />} />
-				<Route path="/dashboard/overview" element={authUser ? <Overview />  : <Navigate to="/Login" />} />
-				<Route path="/dashboard/expenses" element={authUser ? <Expenses />  : <Navigate to="/Login" />} />
-				<Route path="/dashboard/bill" element={authUser ? <Bill />  : <Navigate to="/Login" />} />
-				<Route path="/manageR" element={authUser ? <Properties />  : <Navigate to="/Login" />} />
-				<Route path="/manageR/properties" element={authUser ? <Properties />  : <Navigate to="/Login" />} />
 				<Route
+					path="/"
+					element={authUser ? <Overview /> : <Navigate to="/Login" />}
+				/>
+				<Route
+					path="/dashboard"
+					element={authUser ? <Overview /> : <Navigate to="/Login" />}
+				/>
+				<Route
+					path="/dashboard/overview"
+					element={authUser ? <Overview /> : <Navigate to="/Login" />}
+				/>
+				<Route
+					path="/dashboard/expenses"
+					element={authUser ? <Expenses /> : <Navigate to="/Login" />}
+				/>
+				<Route
+					path="/dashboard/bill"
+					element={authUser ? <Bill /> : <Navigate to="/Login" />}
+				/>
+				<Route
+					path="/manageR"
+					element={authUser ? <Properties /> : <Navigate to="/Login" />}
+				/>
+				<Route
+					path="/manageR/properties"
+					element={authUser ? <Properties /> : <Navigate to="/Login" />}
+				/>
+				<Route
+					path="/manageR/viewProperty"
+					element={authUser ? <ViewProperty /> : <Navigate to="/Login" />}
+				/>
+				{/* <Route
 					path="/manageR/properties-addProperty"
 					element={authUser ? <AddPropertise />  : <Navigate to="/Login" />}
+				/> */}
+				{/* <Route
+					path="/manageR/properties-addProperty"
+					element={authUser ? <AddPropertiesNew /> : <Navigate to="/Login" />}
+				/> */}
+				<Route
+					path="/manageR/properties-addProperty"
+					element={authUser ? <PropertyManagement />  : <Navigate to="/Login" />}
+				/> 
+				<Route
+					path="/Login"
+					element={!authUser ? <Login /> : <Navigate to="/dashboard" />}
 				/>
-				<Route path="/Login" element={!authUser ? <Login /> : <Navigate to="/dashboard" />  } />
 				<Route path="/SignUP" element={<SignUp />} />
 			</Routes>
 			<Toaster />
