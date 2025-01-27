@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./dashPage.css";
 import Layout from "../../../Layout/Layout";
@@ -8,72 +8,13 @@ import ExpenseTable from "../Components/ExpenseTable";
 import FilterIcon from "../../../assets/DashBoard/filter.svg";
 import CustomDatePicker from "../Components/CustomDatePicker";
 import AddAccountModel from "../Components/AddAccountModel";
+import axios from "axios";
 
 const tabs = [
 	{ label: "Overview", link: "/dashboard/overview" },
 	{ label: "Expenses", link: "/dashboard/expenses" },
 	{ label: "Bill", link: "/dashboard/bill" },
 	{ label: "Smart Key", link: "/dashboard/smartKey" },
-];
-
-const data = [
-	{
-		deatail: "deatail 1 for task",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-	{
-		deatail: "deatail 2 for task",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-	{
-		deatail: "deatail 3 for task",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-	{
-		deatail: "deatail 4 for task",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-	{
-		deatail: "deatail 5 for task",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-	{
-		deatail: "deatail 6 for task",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-	{
-		deatail: "deatail 7 for task",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-];
-
-const initialData = [
-	{
-		detail: "Detail 1",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
-	{
-		detail: "Detail 2",
-		debit: "125 USD",
-		credit: "125 USD",
-		balance: "125 USD",
-	},
 ];
 
 function Expenses() {
@@ -87,6 +28,26 @@ function Expenses() {
 	const handleSave = (newEntry) => {
 		setData([...data, newEntry]);
 	};
+
+	const [tableData, setTableData] = useState([]);
+	const [errorOnExpenseTable, setErrorOnExpenseTable] = useState("");
+
+	useEffect(() => {
+		const fetchAccounts = async () => {
+			try {
+				const response = await axios.get("http://localhost:5001/api/account/", {
+					withCredentials: true,
+				});
+				setTableData(response.data);
+				console.log("Fetched Data:", response.data);
+			} catch (err) {
+				console.error("Error Fetching Data:", err.response?.data || err.message);
+				setErrorOnExpenseTable(err.response?.data?.message || "Failed to fetch account data.");
+			}
+		};
+
+		fetchAccounts();
+	}, []);
 
 	return (
 		<Layout>
@@ -138,7 +99,7 @@ function Expenses() {
 							/>
 						</div>
 						<div>
-							<ExpenseTable data={data} />
+							<ExpenseTable data={tableData} />
 						</div>
 					</div>
 					<div>

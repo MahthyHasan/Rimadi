@@ -1,38 +1,46 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
-function ExpenseTable({ data }) {
-	return (
-		<div>
-			<div>
-				<Table striped bordered hover>
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Deatail</th>
-							<th>Debit</th>
-							<th>Credit</th>
-							<th>Balance</th>
-						</tr>
-					</thead>
-					<tbody>
-						{data.map((item, index) => (
-							<tr key={index}>
-								<td>
-									<Form.Check reverse name="group1" id={index + 1} />
-								</td>
-								<td>{item.deatail}</td>
-								<td>{item.debit}</td>
-								<td>{item.credit}</td>
-                                <td>{item.balance}</td>
-							</tr>
-						))}
-					</tbody>
-				</Table>
-			</div>
-		</div>
-	);
+function AccountTable({ data, onEdit }) {
+  return (
+    <div>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th className="text-center">#</th>
+            <th className="text-center">Date</th>
+            <th className="text-center">Entry Type</th>
+            <th className="text-center">Amount</th>
+            <th className="text-center">Description</th>
+            <th className="text-center">Category</th>
+            <th className="text-center">Payment Method</th>
+            <th className="text-center">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, index) => (
+            <tr key={item._id}>
+              <td className="text-center">
+                <Form.Check reverse name="group1" id={`checkbox-${index}`} />
+              </td>
+              <td className="text-center">{new Date(item.date).toLocaleDateString()}</td>
+              <td className="text-center">{item.entryType}</td>
+              <td className="text-center">{item.amount}</td>
+              <td className="text-center">{item.description}</td>
+              <td className="text-center">{item.category}</td>
+              <td className="text-center">{item.paymentMethod}</td>
+              <td className="text-center">
+                <Button variant="primary" size="sm" onClick={() => onEdit(item)}>
+                  Edit
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
+  );
 }
 
-export default ExpenseTable;
+export default AccountTable;
