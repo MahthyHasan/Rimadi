@@ -23,14 +23,15 @@ const AddPropertyMap = ({ onAddressSelect }) => {
 
 	// Custom component to handle map clicks
 	const LocationMarker = () => {
-		useMapEvents({
+		const map = useMapEvents({
 			click(e) {
 				const { lat, lng } = e.latlng;
 				setPosition([lat, lng]); // Update marker position
 				fetchAddress(lat, lng); // Get address
 			},
 		});
-		return <Marker position={position} />;
+
+		return position ? <Marker position={position} /> : null;
 	};
 
 	return (
@@ -38,6 +39,7 @@ const AddPropertyMap = ({ onAddressSelect }) => {
 			<MapContainer center={position} zoom={7} className="w-full h-full">
 				<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 				<LocationMarker />
+				{position && <Marker position={position} />}
 			</MapContainer>
 			{/* Show Address Below Map */}
 			{address && <p className="mt-2 text-center text-sm font-semibold">{address}</p>}
