@@ -14,6 +14,8 @@ import Login from "./Componets/Authentication/Pages/Login";
 import ViewProperty from "./Componets/ManageRoom/Pages/ViewProperty";
 import PropertyManagement from "./Componets/ManageRoom/Pages/PropertyManagement";
 
+import Test from "./Componets/TestPages/Test";
+
 function App() {
 	const {
 		data: authUser,
@@ -113,6 +115,7 @@ function App() {
 					element={!authUser ? <Login /> : <Navigate to="/dashboard" />}
 				/>
 				<Route path="/SignUP" element={<SignUp />} />
+				<Route path="/TestPage" element={<Test />} />
 			</Routes>
 			<Toaster />
 		</div>
