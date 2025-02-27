@@ -1,20 +1,19 @@
-import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+import React, { useState, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 const AddPropertyMap = ({ onAddressSelect }) => {
 	const [position, setPosition] = useState([7.8731, 80.7718]); // Default: Sri Lanka
 	const [address, setAddress] = useState("");
 
-	// Function to fetch address from coordinates
+	// Fetch address from Nominatim API
 	const fetchAddress = async (lat, lon) => {
-		const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
 		try {
-			const response = await fetch(url);
+			const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
 			const data = await response.json();
 			if (data.display_name) {
 				setAddress(data.display_name);
-				onAddressSelect(data.display_name); // Pass selected address to parent component
+				onAddressSelect(data.display_name);
 			}
 		} catch (error) {
 			console.error("Error fetching address:", error);
@@ -27,11 +26,14 @@ const AddPropertyMap = ({ onAddressSelect }) => {
 			click(e) {
 				const { lat, lng } = e.latlng;
 				setPosition([lat, lng]); // Update marker position
-				fetchAddress(lat, lng); // Get address
+				fetchAddress(lat, lng); // Fetch new address
 			},
 		});
-
-		return position ? <Marker position={position} /> : null;
+		return position ? (
+			<Marker position={position}>
+				<Popup>{address || "Fetching address..."}</Popup>
+			</Marker>
+		) : null;
 	};
 
 	return (
@@ -39,7 +41,6 @@ const AddPropertyMap = ({ onAddressSelect }) => {
 			<MapContainer center={position} zoom={7} className="w-full h-full">
 				<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 				<LocationMarker />
-				{position && <Marker position={position} />}
 			</MapContainer>
 			{/* Show Address Below Map */}
 			{address && <p className="mt-2 text-center text-sm font-semibold">{address}</p>}

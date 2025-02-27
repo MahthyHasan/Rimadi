@@ -15,6 +15,7 @@ import ViewProperty from "./Componets/ManageRoom/Pages/ViewProperty";
 import PropertyManagement from "./Componets/ManageRoom/Pages/PropertyManagement";
 
 import Test from "./Componets/TestPages/Test";
+import AddPropertyDeatailsPage from "./Componets/ManageRoom/Pages/AddProperties/AddPropertyDeatailsPage";
 
 function App() {
 	const {
@@ -116,6 +117,7 @@ function App() {
 				/>
 				<Route path="/SignUP" element={<SignUp />} />
 				<Route path="/TestPage" element={<Test />} />
+				<Route path="/AddpropertyDetailsAndAddress" element={<AddPropertyDeatailsPage  />} />
 			</Routes>
 			<Toaster />
 		</div>

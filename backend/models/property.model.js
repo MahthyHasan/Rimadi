@@ -6,17 +6,59 @@ const propertySchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    address: {
+    rating: {
+      type: String,
+      required: true,
+      default: "N/A",
+    },
+    floorCount:{
+      type: number,
+      required: true,
+    },
+    checkOut:{
       type: String,
       required: true,
     },
+    checkIn:{
+      type: String,
+      required: true,
+    },
+    buildingNo:{
+      type: String,
+      required: true,
+    },
+    street:{
+      type: String,
+      required: true,
+    },
+    town:{
+      type: String,
+      required: true,
+    },
+    district:{
+      type: String,
+      required: true,
+    },
+    postalCode:{
+      type: String,
+      required: true,
+    },
+    province:{
+      type: String,
+      required: true,
+    },
+    country:{
+      type: String,
+      required: true,
+    },    
     latitude: {
       type: Number,
-      required: true,
+      // ToDo
+      
     },
     longitude: {
       type: Number,
-      required: true,
+      // ToDo
     },
     image: {
       type: String, // URL to the image

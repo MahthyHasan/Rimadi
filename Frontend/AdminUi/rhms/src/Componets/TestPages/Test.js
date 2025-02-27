@@ -14,7 +14,7 @@ const Test = () => {
 					<AddPropertyAdress />
 				</div>
                 <div>
-                    <AddPropertyMap />
+                    
                 </div>
 			</div>
 		</div>

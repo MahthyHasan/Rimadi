@@ -3,11 +3,11 @@ import React from "react";
 const buttonVariants = {
 	primary: "bg-rmdGreen hover:bg-rmdYellow text-white",
 	secondary: "bg-rmdYellow hover:bg-rmdGreen text-white",
-	danger: "bg-red-500 hover:bg-red-600 text-white",
+	danger: "bg-red hover:bg-black text-white",
 };
 
 const Button = ({
-	variant = "primary",
+	variant = {buttonVariants},
 	children,
 	className = "",
 	...props

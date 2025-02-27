@@ -3,7 +3,7 @@ import Property from "../models/property.model.js";
 // Add new property
 export const addProperty = async (req, res) => {
   try {
-    const { name, address, latitude, longitude, image, description, amenities, policies } = req.body;
+    const { name, rating, floorCount,  checkOut, photos,  checkIn, buildingNo, street, town, latitude, district, postalCode, province, country,  longitude, image, description, amenities, policies } = req.body;
 
     const newProperty = new Property({
       name,
@@ -14,6 +14,18 @@ export const addProperty = async (req, res) => {
       description,
       amenities,
       policies,
+      rating, 
+      floorCount,
+      checkOut,
+      photos,
+      checkIn,
+      buildingNo,
+      street,
+      town,
+      district,
+      postalCode,
+      province,
+      country,
       createdBy: req.user._id,
     });
 
