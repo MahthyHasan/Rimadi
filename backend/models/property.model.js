@@ -53,12 +53,12 @@ const propertySchema = mongoose.Schema(
     },    
     latitude: {
       type: Number,
-      // ToDo
+      // ToDo Need to be required
       
     },
     longitude: {
       type: Number,
-      // ToDo
+      // ToDo Need to be required
     },
     image: {
       type: String, // URL to the image
