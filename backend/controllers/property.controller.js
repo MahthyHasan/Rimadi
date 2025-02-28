@@ -7,7 +7,6 @@ export const addProperty = async (req, res) => {
 
     const newProperty = new Property({
       name,
-      address,
       latitude,
       longitude,
       image,

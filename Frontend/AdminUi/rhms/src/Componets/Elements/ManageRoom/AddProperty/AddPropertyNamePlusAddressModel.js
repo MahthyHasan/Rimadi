@@ -3,9 +3,10 @@ import { Modal } from "react-bootstrap";
 import Button from "../../../Atoms/Button";
 import AddPropertyName from "./AddPropertyName";
 import AddPropertyAdress from "./AddPropertyAddress";
+import { usePropertyStore } from "../../../../Store/property-store";
 
 const AddPropertyNamePlusAddressModel = ({ modelOpen, setModelOpen }) => {
-
+	const {submitProperty} = usePropertyStore();
 	return (
 		<Modal
 			style={{ opacity: modelOpen ? 1 : 0 }}
@@ -29,7 +30,7 @@ const AddPropertyNamePlusAddressModel = ({ modelOpen, setModelOpen }) => {
 			</Modal.Body>
 			<Modal.Footer>
                 <Button variant="secondary" onClick={() => setModelOpen(false)}>Close</Button>
-				<Button variant="primary">Add Property</Button>				
+				<Button variant="primary" onClick={submitProperty}>Add Property</Button>				
 			</Modal.Footer>
 		</Modal>
 	);

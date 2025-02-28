@@ -12,7 +12,7 @@ const propertySchema = mongoose.Schema(
       default: "N/A",
     },
     floorCount:{
-      type: number,
+      type: Number,
       required: true,
     },
     checkOut:{
@@ -21,7 +21,8 @@ const propertySchema = mongoose.Schema(
     },
     checkIn:{
       type: String,
-      required: true,
+      // required: true,
+      // I thing there is an error in backend may be that will be the spell mistake 
     },
     buildingNo:{
       type: String,
@@ -65,7 +66,8 @@ const propertySchema = mongoose.Schema(
     },
     description: {
       type: String,
-      required: true,
+      // required: true,
+      // I thing there is an error in backend may be that will be the spell mistake 
     },
     ratings: {
       type: Number,

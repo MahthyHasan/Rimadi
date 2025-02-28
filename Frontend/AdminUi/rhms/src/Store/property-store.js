@@ -1,4 +1,5 @@
 import {create} from 'zustand';
+import AddPropertyToDB from '../ApiRequests/Post/AddPropertyDB';
 
 export const usePropertyStore = create((set) => ({
     property: {
@@ -27,7 +28,7 @@ export const usePropertyStore = create((set) => ({
     })),
     resetProperty: () => set({
         property: {
-            name:"",
+        name:"",
         rating:"",
         floorCount:"",
         checkOut:"",
@@ -42,4 +43,15 @@ export const usePropertyStore = create((set) => ({
         country:"",
         },
     }),
+
+    // Here I creating function to add the Property data to add them in to the system database
+    submitProperty: async () => {
+        const {property} = usePropertyStore.getState();
+        try {
+            const response = await AddPropertyToDB(property);
+            console.log("property added successfully", response);            
+        } catch (error) {
+            console.error("Failed to add property", error );            
+        }
+    }
 }));
