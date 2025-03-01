@@ -20,7 +20,7 @@ export const usePropertyStore = create((set) => ({
     },
 
     // Update basic property details
-    updatePropertyDetails: (details) => set((state) => ({
+    setPropertyField: (details) => set((state) => ({
         property: {
             ...state.property,
             ...details
