@@ -4,7 +4,7 @@ import TextInputs from "../../../Atoms/TextInputs";
 
 const EditFloor = () => {
 	return (
-		<div className="flex flex-col lg:flex-row justify-between">
+		<div className="flex flex-col lg:flex-row justify-between px-4">
 			<>
 				<div className="border border-rmdYellow border-2 flex flex-col">
 					<h1 className="text-[1rem] text-rmdGreen">Edit Floors Details</h1>

@@ -5,7 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 
 const EditRoom = () => {
 	return (
-		<div className="flex flex-col lg:flex-row justify-between">
+		<div className="flex flex-col lg:flex-row justify-between px-4">
 			<>
 				<div className="border border-rmdYellow border-2 flex flex-col">
 					<h1 className="text-[1rem] text-rmdGreen">Edit Room Details</h1>
