@@ -13,6 +13,7 @@ import SignUp from "./Componets/Authentication/Pages/SignUp";
 import Login from "./Componets/Authentication/Pages/Login";
 import ViewProperty from "./Componets/ManageRoom/Pages/ViewProperty";
 import PropertyManagement from "./Componets/ManageRoom/Pages/PropertyManagement";
+import PropertyCompletationPage from "./Componets/ManageRoom/Pages/PropertyCompletationPage";
 
 import Test from "./Componets/TestPages/Test";
 import AddPropertyDeatailsPage from "./Componets/ManageRoom/Pages/AddProperties/AddPropertyDeatailsPage";
@@ -109,7 +110,7 @@ function App() {
 				/> */}
 				<Route
 					path="/manageR/properties-addProperty"
-					element={authUser ? <PropertyManagement />  : <Navigate to="/Login" />}
+					element={authUser ? <PropertyCompletationPage />  : <Navigate to="/Login" />}
 				/> 
 				<Route
 					path="/Login"

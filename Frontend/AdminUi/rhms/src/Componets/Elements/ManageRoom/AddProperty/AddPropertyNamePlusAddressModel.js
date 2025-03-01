@@ -4,9 +4,25 @@ import Button from "../../../Atoms/Button";
 import AddPropertyName from "./AddPropertyName";
 import AddPropertyAdress from "./AddPropertyAddress";
 import { usePropertyStore } from "../../../../Store/property-store";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddPropertyNamePlusAddressModel = ({ modelOpen, setModelOpen }) => {
 	const {submitProperty} = usePropertyStore();
+
+	const navigate = useNavigate(); // Initialize useNavigate
+
+    // Function to handle property submission
+    const handleSubmit = async () => {
+        try {
+            await submitProperty(); // Call the Zustand store function
+            toast.success("Property added successfully! 🎉"); // Success toast
+            setTimeout(() => navigate("/manageR/properties-addProperty"), 2000); // Navigate after 2 sec
+        } catch (error) {
+            toast.error("Failed to add property! ❌"); // Error toast
+        }
+    };
+
 	return (
 		<Modal
 			style={{ opacity: modelOpen ? 1 : 0 }}
@@ -30,7 +46,7 @@ const AddPropertyNamePlusAddressModel = ({ modelOpen, setModelOpen }) => {
 			</Modal.Body>
 			<Modal.Footer>
                 <Button variant="secondary" onClick={() => setModelOpen(false)}>Close</Button>
-				<Button variant="primary" onClick={submitProperty}>Add Property</Button>				
+				<Button variant="primary" onClick={handleSubmit}>Add Property</Button>				
 			</Modal.Footer>
 		</Modal>
 	);

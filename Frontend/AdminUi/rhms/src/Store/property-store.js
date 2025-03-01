@@ -49,9 +49,11 @@ export const usePropertyStore = create((set) => ({
         const {property} = usePropertyStore.getState();
         try {
             const response = await AddPropertyToDB(property);
-            console.log("property added successfully", response);            
+            console.log("property added successfully", response);
+            return response;            
         } catch (error) {
-            console.error("Failed to add property", error );            
+            console.error("Failed to add property", error );
+            throw error;            
         }
     }
 }));

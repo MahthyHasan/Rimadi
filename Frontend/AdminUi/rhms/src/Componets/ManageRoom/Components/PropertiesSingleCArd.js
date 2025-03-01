@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function PropertiesSingleCard({ property }) {
-	const { name, address, description, image, policies, availability } =
+	const { name, address, description, image, checkIn, checkOut, availability } =
 		property;
 
 	return (
@@ -30,12 +30,12 @@ function PropertiesSingleCard({ property }) {
 					<ul className="flex flex-col md:flex-row justify-center gap-1 ml-[-35px]">
 						<li>
 							<p className="text-sm text-rmdGreen">
-								<strong>Check-In Time:</strong> {policies.checkInTime}
+								<strong>Check-In Time:</strong> {checkIn}
 							</p>
 						</li>
 						<li>
 							<p className="text-sm text-rmdGreen">
-								<strong>Check-Out Time:</strong> {policies.checkOutTime}
+								<strong>Check-Out Time:</strong> {checkOut}
 							</p>
 						</li>
 					</ul>
