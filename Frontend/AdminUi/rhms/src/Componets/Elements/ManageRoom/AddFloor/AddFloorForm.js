@@ -11,29 +11,21 @@ const AddFloorForm = () => {
     const [floorLength, setFloorLength] = useState('');
 
     const handleAddFloor = () => {
-        const newFloor = {
-            name: floorName,
-            width: floorWidth,
-            length: floorLength
-        };
-
-        addFloor(newFloor);
-
-        // Clear the inputs after adding
+        addFloor({ name: floorName, width: floorWidth, length: floorLength });
         setFloorName('');
         setFloorWidth('');
         setFloorLength('');
     };
 
     return (
-        <div className='border border-4 border-rmdYellow flex flex-col px-4'>
-            <h1 className='text-[2rem] text-rmdGreen'>Add Floor Details</h1>
-            <TextInputs type='text' label={"Add Floor Name"} value={floorName} onChange={(e) => setFloorName(e.target.value)} />
-            <div className='flex flex-row lg:flex-col justify-center gap-4'>
-                <TextInputs type='number' label={"Add Floor Width (in Feet)"} value={floorWidth} onChange={(e) => setFloorWidth(e.target.value)} />
-                <TextInputs type='number' label={"Add Floor Length (in Feet)"} value={floorLength} onChange={(e) => setFloorLength(e.target.value)} />
+        <div className="border-4 border-rmdYellow p-4 flex flex-col gap-4 w-full">
+            <h1 className="text-xl text-rmdGreen">Add Floor Details</h1>
+            <TextInputs type="text" label="Add Floor Name" value={floorName} onChange={(e) => setFloorName(e.target.value)} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <TextInputs type="number" label="Add Floor Width (in Feet)" value={floorWidth} onChange={(e) => setFloorWidth(e.target.value)} />
+                <TextInputs type="number" label="Add Floor Length (in Feet)" value={floorLength} onChange={(e) => setFloorLength(e.target.value)} />
             </div>
-            <Button variant="primary" onClick={handleAddFloor} className='mt-2'>Add Floor</Button>
+            <Button variant="primary" className="mt-2" onClick={handleAddFloor}>Add Floor</Button>
         </div>
     );
 };
