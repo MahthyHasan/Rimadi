@@ -13,7 +13,7 @@ const TextInputs = ({ type = "text", label, className = "", ...props }) => {
       {label && <label className="text-rmdGreen font-medium">{label}</label>}
       <input
         type={type}
-        className={`px-4 py-2 rounded-md focus:outline-none transition duration-300${inputVariants[type] || inputVariants.text} ${className}`}
+        className={`px-4 py-2 rounded-md focus:outline-none transition duration-300 ${inputVariants[type] || inputVariants.text} ${className}`}
         {...props}
       />
     </div>

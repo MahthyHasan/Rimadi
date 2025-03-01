@@ -38,7 +38,9 @@ const AddRoom = ({ floorNo }) => {
                 <TextInputs type="number" label="Position Y (in Feet)" value={room.positionY} onChange={e => handleChange('positionY', e.target.value)} />
             </div>
 
-            <Button variant="primary" className="w-full md:w-auto" onClick={handleAddRoom}>Add Room</Button>
+            <div className="flex justify-center">
+            <Button variant="primary" className="w-full md:w-auto justify-center align-middle" onClick={handleAddRoom}>Add Room</Button>
+            </div>
         </div>
     );
 };
