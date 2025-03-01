@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DeleteButton = ({ onClick, label = "Delete" }) => {
+const DeleteButton = ({ onClick, label}) => {
     return (
       <button
         onClick={onClick}

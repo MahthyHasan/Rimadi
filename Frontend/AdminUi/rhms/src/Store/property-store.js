@@ -19,10 +19,9 @@ export const usePropertyStore = create((set) => ({
         floors: []
     },
 
-    // Unified field updater (handles both single and multiple fields)
+    // Unified field updater (for general property fields)
     setPropertyField: (fieldOrObject, value) => {
         if (typeof fieldOrObject === 'string') {
-            // Single field update
             set((state) => ({
                 property: {
                     ...state.property,
@@ -30,7 +29,6 @@ export const usePropertyStore = create((set) => ({
                 }
             }));
         } else {
-            // Multiple fields update (object)
             set((state) => ({
                 property: {
                     ...state.property,
@@ -40,6 +38,7 @@ export const usePropertyStore = create((set) => ({
         }
     },
 
+    // Floor Operations
     addFloor: (floor) => set((state) => ({
         property: {
             ...state.property,
@@ -49,7 +48,11 @@ export const usePropertyStore = create((set) => ({
 
     editFloor: (floorIndex, updatedFloor) => set((state) => {
         const updatedFloors = [...state.property.floors];
-        updatedFloors[floorIndex] = { ...updatedFloor, rooms: updatedFloors[floorIndex].rooms };
+        updatedFloors[floorIndex] = { 
+            ...updatedFloors[floorIndex], 
+            ...updatedFloor, 
+            rooms: updatedFloors[floorIndex].rooms 
+        };
         return { property: { ...state.property, floors: updatedFloors } };
     }),
 
@@ -60,6 +63,7 @@ export const usePropertyStore = create((set) => ({
         }
     })),
 
+    // Room Operations within a Floor
     addRoomToFloor: (floorIndex, room) => set((state) => {
         const updatedFloors = [...state.property.floors];
         updatedFloors[floorIndex].rooms.push(room);
@@ -68,7 +72,10 @@ export const usePropertyStore = create((set) => ({
 
     editRoomInFloor: (floorIndex, roomIndex, updatedRoom) => set((state) => {
         const updatedFloors = [...state.property.floors];
-        updatedFloors[floorIndex].rooms[roomIndex] = updatedRoom;
+        updatedFloors[floorIndex].rooms[roomIndex] = { 
+            ...updatedFloors[floorIndex].rooms[roomIndex], 
+            ...updatedRoom 
+        };
         return { property: { ...state.property, floors: updatedFloors } };
     }),
 
@@ -78,6 +85,7 @@ export const usePropertyStore = create((set) => ({
         return { property: { ...state.property, floors: updatedFloors } };
     }),
 
+    // Reset Property to Initial State
     resetProperty: () => set({
         property: {
             name: "",
@@ -97,6 +105,7 @@ export const usePropertyStore = create((set) => ({
         }
     }),
 
+    // Submit Property to Backend
     submitProperty: async () => {
         const { property } = usePropertyStore.getState();
         try {
