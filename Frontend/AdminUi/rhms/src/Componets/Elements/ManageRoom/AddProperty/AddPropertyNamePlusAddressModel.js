@@ -14,13 +14,16 @@ const AddPropertyNamePlusAddressModel = ({ modelOpen, setModelOpen }) => {
 
     // Function to handle property submission
     const handleSubmit = async () => {
-        try {
-            await submitProperty(); // Call the Zustand store function
-            toast.success("Property added successfully! 🎉"); // Success toast
-            setTimeout(() => navigate("/manageR/properties-addProperty"), 2000); // Navigate after 2 sec
-        } catch (error) {
-            toast.error("Failed to add property! ❌"); // Error toast
-        }
+		try {
+			const savedProperty = await submitProperty(); // Call the Zustand store function
+			if (savedProperty && savedProperty._id) {
+				usePropertyStore.getState().setPropertyId(savedProperty._id);
+			}
+			toast.success("Property added successfully! 🎉"); // Success toast
+			setTimeout(() => navigate("/manageR/properties-addProperty"), 2000); // Navigate after 2 sec
+		} catch (error) {
+			toast.error("Failed to add property! ❌"); // Error toast
+		}
     };
 
 	return (
