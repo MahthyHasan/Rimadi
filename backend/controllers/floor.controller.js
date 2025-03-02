@@ -27,6 +27,37 @@ export const addFloor = async (req, res) => {
   }
 };
 
+
+export const addMultipleFloors = async (req, res) => {
+  const { propertyId, floors, createdBy } = req.body;
+  
+  try {
+      const property = await Property.findById(propertyId);
+      if (!property) {
+          return res.status(404).json({ message: "Property not found" });
+      }
+
+      // Prepare the floor data to be inserted
+      const floorDocs = floors.map(floor => ({
+          ...floor,
+          property: propertyId,  // Ensure property is an ObjectId
+          createdBy: createdBy,
+      }));
+
+      // Create multiple floors at once
+      const createdFloors = await Floor.insertMany(floorDocs);
+
+      // Update the property with the new floor IDs
+      property.floors = createdFloors.map(floor => floor._id);
+      await property.save();
+
+      res.status(201).json({ message: "Floors added successfully", createdFloors });
+  } catch (error) {
+      console.error("Failed to add floors", error);
+      res.status(500).json({ message: "Server error", error });
+  }
+};
+
 // Get all floors
 export const getFloors = async (req, res) => {
   try {

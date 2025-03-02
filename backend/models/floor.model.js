@@ -26,7 +26,7 @@ const floorSchema = mongoose.Schema(
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // Reference to the user who created the floor
-      required: true,
+      // required: true,
     },
   },
   { timestamps: true }

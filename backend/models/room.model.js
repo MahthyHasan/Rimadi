@@ -8,7 +8,7 @@ const roomSchema = mongoose.Schema(
     },
     size: {
       type: String, // e.g., "Small", "Medium", "Large"
-      required: true,
+      // required: true,
     },
     width: {
       type: Number, // Room width in meters
@@ -29,15 +29,15 @@ const roomSchema = mongoose.Schema(
     category: {
       type: String,
       enum: ["AC", "Non-AC"],
-      required: true,
+      // required: true,
     },
     peopleCapacity: {
       type: Number, // Maximum number of people allowed in the room
-      required: true,
+      // required: true,
     },
     bedCount: {
       type: Number, // Number of beds in the room
-      required: true,
+      // required: true,
     },
     accessories: {
       type: [String], // Array of accessories (e.g., "Heater", "Locker", "Attached Bathroom")

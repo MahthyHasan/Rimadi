@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import AddPropertyToDB from '../ApiRequests/Post/AddPropertyDB';
-import { AddFloortoDB } from '../ApiRequests/Post/AddFloorDB';
+import  AddFloorDB  from '../ApiRequests/Post/AddFloorDB';
 
 export const usePropertyStore = create(devtools((set, get) => ({
     property: {
@@ -132,6 +132,53 @@ export const usePropertyStore = create(devtools((set, get) => ({
             throw error;
         }
     },
+
+     // Add Floor and Store ID
+     addFloorToDB: async () => {
+        try {
+            const { property } = get();
+            const floors = property.floors;  // get all floors from store
+          // Replace with actual user ID from auth (maybe req.user._id)
+    
+            const response = await AddFloorDB(property.id, floors);
+    
+            console.log("Floors added successfully", response);
+            return response;
+        } catch (error) {
+            console.error("Failed to add floors", error);
+            throw error;
+        }
+    },
+
+    // // Add Room and Store ID
+    // addRoomToDB: async (floorIndex, room) => {
+    //     try {
+    //         const { property } = get();
+    //         const floorId = property.floors[floorIndex]?.id;
+    //         if (!floorId) throw new Error("Floor ID not found");
+
+    //         const response = await AddRoomToDB({
+    //             ...room,
+    //             floorId,
+    //             propertyId: property.id,
+    //             createdBy: "USER_ID_HERE"
+    //         });
+
+    //         if (response && response._id) {
+    //             set((state) => {
+    //                 const updatedFloors = [...state.property.floors];
+    //                 updatedFloors[floorIndex].rooms.push({ ...room, id: response._id });
+
+    //                 return { property: { ...state.property, floors: updatedFloors } };
+    //             }, false, "addRoomToDB");
+    //         }
+    //         console.log("Room added successfully", response);
+    //         return response;
+    //     } catch (error) {
+    //         console.error("Failed to add room", error);
+    //         throw error;
+    //     }
+    // },
 
     
     // store Floor Id After adding Floor

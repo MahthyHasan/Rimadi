@@ -5,9 +5,26 @@ import ListFloors from "../../Elements/ManageRoom/AddFloor/ListFloors";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "../../Atoms/Button";
 import Layout from "../../../Layout/Layout";
+import toast from "react-hot-toast";
 
 const PropertyCompletionPage = () => {
-	const { property, deleteFloor } = usePropertyStore();
+	const { property, deleteFloor, addFloorToDB } = usePropertyStore();
+
+	// Function to handle the "Complete" button click
+	const handleComplete = async () => {
+		try {
+			// Trigger the addFloorToDB action
+			const floorResponse = await addFloorToDB(property.floors);  // Pass the floors to the API function
+
+			// If the floor is added successfully
+			toast.success("Floors added successfully!");
+
+			// You can also do other actions like navigating to another page
+		} catch (error) {
+			// If there is an error
+			toast.error("Failed to add floors!");
+		}
+	};
 
 	return (
 		<Layout>
@@ -26,7 +43,7 @@ const PropertyCompletionPage = () => {
 					</Accordion>
 				</div>
 				<div className="flex justify-center">
-					<Button variant="primary">Complete</Button>
+					<Button variant="primary" onClick={handleComplete}>Complete</Button>
 				</div>
 			</div>
 		</Layout>
