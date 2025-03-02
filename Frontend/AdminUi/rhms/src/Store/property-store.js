@@ -133,6 +133,10 @@ export const usePropertyStore = create(devtools((set, get) => ({
         }
     },
 
-    // Submit Floor to Database
+    
+    // store Floor Id After adding Floor
+    setFloorId: (floorId) => set((state) => ({
+        selectedFloorId: floorId, // Store the floor ID
+    }), false, "setFloorId"),
 
 }), { name: "PropertyStore" }));
