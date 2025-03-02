@@ -19,9 +19,12 @@ const floorSchema = mongoose.Schema(
       ref: "Property", // Reference to the property this floor belongs to
       required: true,
     },
-    rooms: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Room", // References the rooms on this floor
+    rooms: [ {
+      name: String,
+      width: Number,
+      length: Number,
+      positionX: Number,
+      positionY: Number
     }],
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,

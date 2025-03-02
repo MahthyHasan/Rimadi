@@ -5,6 +5,7 @@ import {
   getRoomById,
   updateRoom,
   deleteRoom,
+  addMultipleRooms,
 } from "../controllers/room.controller.js";
 import { protectedRoute } from "../midlelayers/protectRoute.js";
 
@@ -24,5 +25,8 @@ router.put("/:id", protectedRoute, updateRoom);
 
 // Delete room
 router.delete("/:id", protectedRoute, deleteRoom);
+
+// update Multiple Rooms
+router.post("/add-multiple", protectedRoute, addMultipleRooms);
 
 export default router;

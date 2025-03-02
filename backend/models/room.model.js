@@ -18,11 +18,11 @@ const roomSchema = mongoose.Schema(
       type: Number, // Room length in meters
       required: true,
     },
-    xPosition: {
+    positionX: {
       type: Number, // x-coordinate of the room in the floor plan
       required: true,
     },
-    yPosition: {
+    positionY: {
       type: Number, // y-coordinate of the room in the floor plan
       required: true,
     },

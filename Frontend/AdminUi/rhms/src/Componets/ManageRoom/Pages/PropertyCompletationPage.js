@@ -6,23 +6,27 @@ import Accordion from "react-bootstrap/Accordion";
 import Button from "../../Atoms/Button";
 import Layout from "../../../Layout/Layout";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const PropertyCompletionPage = () => {
-	const { property, deleteFloor, addFloorToDB } = usePropertyStore();
+	const { property, deleteFloor, addFloorToDB, submitRoomsToDB } = usePropertyStore();
+	const navigate = useNavigate();
 
 	// Function to handle the "Complete" button click
 	const handleComplete = async () => {
 		try {
 			// Trigger the addFloorToDB action
 			const floorResponse = await addFloorToDB(property.floors);  // Pass the floors to the API function
+			await submitRoomsToDB();
 
 			// If the floor is added successfully
-			toast.success("Floors added successfully!");
+			toast.success("Property added successfully!");
+			setTimeout(() => navigate("/manageR"), 2000);
 
 			// You can also do other actions like navigating to another page
 		} catch (error) {
 			// If there is an error
-			toast.error("Failed to add floors!");
+			toast.error("Failed to add Property!");
 		}
 	};
 
