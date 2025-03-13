@@ -3,6 +3,7 @@ import { devtools } from 'zustand/middleware';
 import AddPropertyToDB from '../ApiRequests/Post/AddPropertyDB';
 import AddFloorDB from '../ApiRequests/Post/AddFloorDB';
 import AddRoomsToDB from '../ApiRequests/Post/AddRoomsToDB ';
+import axios from 'axios';
 
 export const usePropertyStore = create(devtools((set, get) => ({
     property: {
@@ -164,4 +165,51 @@ export const usePropertyStore = create(devtools((set, get) => ({
             }
         }
     },
+    setSelectedProperty: async (propertyId) => {
+        try {
+            const response = await axios.get(`http://localhost:5001/api/property/${propertyId}?populate=floors.rooms`, {
+                withCredentials: true,
+            });
+    
+            const propertyData = response.data;
+    
+            set((state) => ({
+                property: {
+                    id: propertyData._id,
+                    name: propertyData.name,
+                    rating: propertyData.rating,
+                    floorCount: propertyData.floorCount,
+                    checkOut: propertyData.checkOut,
+                    photos: propertyData.photos || [],
+                    buildingNo: propertyData.buildingNo,
+                    street: propertyData.street,
+                    town: propertyData.town,
+                    district: propertyData.district,
+                    postalCode: propertyData.postalCode,
+                    province: propertyData.province,
+                    country: propertyData.country,
+                    floors: propertyData.floors?.map(floor => ({
+                        id: floor._id,
+                        name: floor.name,  // Adjust based on actual floor schema
+                        rooms: floor.rooms?.map(room => ({
+                            id: room._id,
+                            name: room.name, // Adjust based on actual room schema
+                            width: room.width, // Example: Single, Double, Suite
+                            length: room.length,
+                            positionX: room.positionX,
+                            positionY: room.positionY,
+                            accessories: room.accessories,
+                            status: room.status, // Example: Available, Booked
+
+                        })) || []
+                    })) || [],
+                }
+            }), false, "setSelectedProperty");
+    
+        } catch (error) {
+            console.error("Failed to fetch property details:", error);
+        }
+    }
+    
+
 }), { name: "PropertyStore" }));

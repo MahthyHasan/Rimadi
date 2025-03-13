@@ -2,8 +2,10 @@ import React from "react";
 import Layout from "../../../Layout/Layout";
 import SelectFloor from "../Components/SelectFloor";
 import RoomView from "../Components/RoomView";
+import { usePropertyStore } from "../../../Store/property-store";
 
 function ViewProperty() {
+	const propertyData = usePropertyStore((state) => state.property);
 	return (
 		<Layout>
 			<div className="bg-white text-rmdGreen min-h-screen border-2 border-rmdYellow rounded-lg p-5">
@@ -16,13 +18,13 @@ function ViewProperty() {
 								className="w-40 h-40 rounded-lg"
 							/>
 							<div>
-								<h2 className="text-2xl font-bold">Blue Villa</h2>
-								<p className="mt-[-1rem]">Batticaloa, Sri Lanka</p>
+								<h2 className="text-2xl font-bold">{propertyData.name || "Property Name"}</h2>
+								<p className="mt-[-1rem]">{propertyData.town || "Location"}</p>
 								<p className="mt-[-1rem]">Luxury, AC, Non AC</p>
 								<p className="mt-[-1rem] font-semibold">Available</p>
-								<p className="text-sm mt-[-1rem]">Total No of Rooms: 10</p>
+								<p className="text-sm mt-[-1rem]">Total No of Floors:  {propertyData.floorCount || 0}</p>
 								<div className="flex items-center space-x-2 mt-[-1rem]">
-									<span className="text-yellow-500">⭐ 8.9</span>
+									<span className="text-yellow-500">⭐ {propertyData.rating || "N/A"}</span>
 									<span className="text-gray-300">👤 50 Persons</span>
 								</div>
 							</div>

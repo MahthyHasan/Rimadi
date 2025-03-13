@@ -50,16 +50,25 @@ export const getProperties = async (req, res) => {
 // Get a specific property by ID
 export const getPropertyById = async (req, res) => {
   try {
-    const property = await Property.findById(req.params.id);
+    const property = await Property.findById(req.params.id)
+      .populate({
+        path: "floors",
+        populate: {
+          path: "rooms",
+        },
+      });
+
     if (!property) {
       return res.status(404).json({ message: "Property Not Found" });
     }
+
     res.status(200).json(property);
   } catch (error) {
     console.error(`Error Fetching Property: ${error.message}`);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
 
 // Update property details
 export const updateProperty = async (req, res) => {
