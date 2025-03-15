@@ -191,6 +191,8 @@ export const usePropertyStore = create(devtools((set, get) => ({
                     floors: propertyData.floors?.map(floor => ({
                         id: floor._id,
                         name: floor.name,  // Adjust based on actual floor schema
+                        width: floor.width,
+                        length: floor.length,
                         rooms: floor.rooms?.map(room => ({
                             id: room._id,
                             name: room.name, // Adjust based on actual room schema

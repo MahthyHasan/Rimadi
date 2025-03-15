@@ -1,8 +1,8 @@
 import React from "react";
 
 const buttonVariants = {
-	primary: "bg-rmdGreen hover:bg-rmdYellow text-white",
-	secondary: "bg-rmdYellow hover:bg-rmdGreen text-white",
+	primary: "bg-rmdGreen hover:bg-rmdYellow text-rmdYellow hover:text-rmdGreen",
+	secondary: "bg-rmdYellow hover:bg-rmdGreen text-rmdGreen hover:text-rmdYellow",
 	danger: "bg-red hover:bg-black text-white",
 };
 

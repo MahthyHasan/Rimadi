@@ -1,28 +1,35 @@
 import React from "react";
+import { usePropertyStore } from "../../../Store/property-store";
+import Room from "./Room"; // Import the Room component
 
-function RoomView() {
-	return (
-		<div>
-			<h3 className="text-xl font-semibold">Rooms View</h3>
-			<div className="grid grid-cols-4 gap-4 mt-3">
-				{Array(12)
-					.fill(null)
-					.map((_, index) => (
-						<div
-							key={index}
-							className={`flex items-center justify-center rounded-lg px-3 py-5 text-rmdGreen ${
-								index % 3 === 0
-									? "bg-green-600"
-									: index % 5 === 0
-									? "bg-red-600"
-									: "bg-teal-900"
-							} border border-yellow-500`}>
-							Room {index + 1}
-						</div>
-					))}
-			</div>
-		</div>
-	);
+function RoomView({ floor }) {
+    if (!floor) {
+        return <p className="text-gray-500 text-center">Please select a floor</p>;
+    }
+
+    // Get floor dimensions from store
+    const { width, length } = floor;
+
+    return (
+        <div className=" border border-gray-300 rounded-lg">
+            <h3 className="text-xl font-semibold">{floor.name || "Selected Floor"}</h3>
+
+            {/* Floor Plan Container */}
+            <div
+                className="relative bg-gray-100 border border-gray-400 rounded-lg overflow-hidden"
+                style={{
+                    width: `${length * 0.5}rem`,  // Scaling the floor width
+                    height: `${width * 0.5}rem`, // Scaling the floor length
+                }}
+            >
+                {floor.rooms.length > 0 ? (
+                    floor.rooms.map((room, index) => <Room key={room.id || index} room={room} />)
+                ) : (
+                    <p className="text-gray-500 text-center mt-10">No rooms available on this floor.</p>
+                )}
+            </div>
+        </div>
+    );
 }
 
 export default RoomView;
